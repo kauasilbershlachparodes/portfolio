@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/login.css"} />
+    <script phx-no-curly-interpolation>
+      (function () {
+        const STORAGE_KEY = 'theme-preference';
+        const FALLBACK_MODE = 'system';
+        const THEME_COLORS = { light: '#ffffff', dark: '#0a1729' };
+
+        const root = document.documentElement;
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+        function normalizeTheme(value) {
+          const normalized = String(value || '').trim().toLowerCase();
+          return normalized === 'light' || normalized === 'dark' || normalized === 'system'
+            ? normalized
+            : FALLBACK_MODE;
+        }
+
+        function getStoredTheme() {
+          try { return normalizeTheme(localStorage.getItem(STORAGE_KEY)); }
+          catch (_error) { return FALLBACK_MODE; }
+        }
+
+        function resolveTheme(mode) {
+          if (mode === 'system') {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          return mode;
+        }
+
+        function applyTheme(mode) {
+          const safeMode = normalizeTheme(mode);
+          const resolvedMode = resolveTheme(safeMode);
+          const isDark = resolvedMode === 'dark';
+
+          root.classList.toggle('dark-theme', isDark);
+          root.classList.toggle('light-theme', !isDark);
+          root.style.colorScheme = resolvedMode;
+          root.setAttribute('data-theme-mode', safeMode);
+          root.setAttribute('data-theme-resolved', resolvedMode);
+          root.setAttribute('data-theme-bootstrapped', 'true');
+
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', THEME_COLORS[resolvedMode] || THEME_COLORS.light);
+          }
+        }
+
+        applyTheme(getStoredTheme());
+      })();
+    </script>
+
+    <script phx-no-curly-interpolation>
+      window.__ILLUMINATI_SUPABASE_CONFIG__ = {
+        supabaseUrl: "https://yeuojewjvyfxcxqzxnpc.supabase.co",
+        supabaseKey: "sb_publishable_K5uvJz80GZoBiZ6GqxpeXw__XCwKAsU",
+        signUpRedirect: "/login?signup=success",
+        resetRedirect: "/reset-password",
+        loginSuccessRedirect: "/",
+        authBootstrapStorageKey: "illuminati-auth-bootstrap",
+        recoveryEmailStorageKey: "illuminati-recovery-email",
+        sessionSyncEndpoint: "/auth/session"
+      };
+    </script>
+
+    <title>Illuminati Dark Web Monitoring</title>
+
+    <style>
+      .invict-login-submit[disabled],
+      .invict-login-submit[aria-disabled="true"] {
+        cursor: default !important;
+      }
+    </style>
+
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/133865f2485a8c29.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/3b25ddb074f183be.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/68989b8edc203dc6.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/7976e287dece7a25.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/7c0b7f75750ab849.css"} />
+
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/d5df9398139f9aea.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/data-vaul-drawer.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/db43014524f01bc2.css"} />
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/f099702a7371bad3.css"} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <main class="invict-login-page">
+      <section class="invict-login-shell" aria-labelledby="invict-signup-title">
+        <header class="invict-login-brand" aria-label="Invict brand">
+          <a
+            class="invict-login-brand-link"
+            href={~p"/login"}
+            aria-label="Ir para a tela de login"
+          >
+            <span class="invict-login-brand-wordmark">
+              <strong>A Elite Estrangeira</strong>
+              <small>by Invicti</small>
+            </span>
+            <span class="invict-login-brand-tagline">AppSec with Zero Noise</span>
+          </a>
+        </header>
+
+        <section class="invict-login-card" aria-label="Painel de criação de conta">
+          <div class="invict-login-card-inner">
+            <h1 id="invict-signup-title" class="invict-login-title">Create account</h1>
+            <p class="invict-login-description">Create your account with email and password.</p>
+            <p class="invict-login-error" id="invictAuthStatus" hidden></p>
+
+            <form
+              class="invict-login-form"
+              id="invictSignUpForm"
+              novalidate
+              accept-charset="UTF-8"
+            >
+              <div class="invict-login-field">
+                <label class="invict-login-label" for="signUpEmail">Email</label>
+                <input
+                  class="invict-login-input"
+                  id="signUpEmail"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  inputmode="email"
+                  autocapitalize="none"
+                  spellcheck="false"
+                  maxlength="320"
+                  required
+                  autofocus
+                />
+                <p class="invict-login-error" id="signUpEmailError" hidden>
+                  Informe um email válido.
+                </p>
+              </div>
+
+              <div class="invict-login-field">
+                <label class="invict-login-label" for="signUpPassword">Password</label>
+                <input
+                  class="invict-login-input"
+                  id="signUpPassword"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  maxlength="1024"
+                  required
+                />
+                <p class="invict-login-error" id="signUpPasswordError" hidden>
+                  Informe uma senha de pelo menos 8 caracteres.
+                </p>
+              </div>
+
+              <button
+                class="button-module__QyrFCa__base button-module__QyrFCa__button button-module__QyrFCa__large invict-login-submit"
+                type="submit"
+                id="signUpSubmitButton"
+                data-geist-button
+              >
+                <span class="button-module__QyrFCa__content button-module__QyrFCa__center">
+                  Sign Up
+                </span>
+              </button>
+
+              <div
+                class="invict-login-options"
+                style="justify-content: center; margin-top: 16px; gap: 6px;"
+              >
+                <span>Already have an account?</span>
+                <a
+                  class="link-module__Q1NRQq__link link-module__Q1NRQq__highlight"
+                  href={~p"/login"}
+                  aria-label="Ir para a tela de login"
+                >
+                  Log in
+                </a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </section>
+
+      <footer class="invict-login-footer" aria-label="Links legais">
+        <nav class="invict-login-footer-links">
+          <a class="link-module__Q1NRQq__link link-module__Q1NRQq__highlight" href="/copyright">
+            Copyright © 2026 Invicti
+          </a>
+          <a
+            class="link-module__Q1NRQq__link link-module__Q1NRQq__highlight"
+            href="/privacy-policy"
+          >
+            Privacy Policy
+          </a>
+          <a
+            class="link-module__Q1NRQq__link link-module__Q1NRQq__highlight"
+            href="/data-protection-policy"
+          >
+            Data Protection Policy
+          </a>
+        </nav>
+      </footer>
+    </main>
+    <script phx-no-curly-interpolation>
+      (function () {
+        function createSupabaseRestClient(cfg) {
+          const authState = { session: null };
+
+          function extractErrorMessage(payload, fallbackMessage) {
+            if (payload && typeof payload === "object") {
+              const candidate =
+                payload.msg ||
+                payload.error_description ||
+                payload.message ||
+                (typeof payload.error === "string" ? payload.error : "");
+
+              if (candidate) {
+                return String(candidate);
+              }
+            }
+
+            return fallbackMessage || "Não foi possível concluir a operação de autenticação.";
+          }
+
+          async function request(path, options) {
+            const cfgOptions = options && typeof options === "object" ? options : {};
+            const method = String(cfgOptions.method || "GET").toUpperCase();
+            const headers = Object.assign(
+              {
+                accept: "application/json",
+                apikey: cfg.supabaseKey
+              },
+              cfgOptions.headers || {}
+            );
+
+            if (method !== "GET" && !headers["content-type"]) {
+              headers["content-type"] = "application/json";
+            }
+
+            if (cfgOptions.accessToken) {
+              headers.authorization = `Bearer ${cfgOptions.accessToken}`;
+            }
+
+            const response = await fetch(`${cfg.supabaseUrl}${path}`, {
+              method,
+              headers,
+              body: cfgOptions.body == null ? undefined : JSON.stringify(cfgOptions.body)
+            });
+
+            const contentType = response.headers.get("content-type") || "";
+            const payload = contentType.includes("application/json")
+              ? await response.json().catch(function () { return {}; })
+              : { message: await response.text().catch(function () { return ""; }) };
+
+            if (!response.ok) {
+              return {
+                data: null,
+                error: new Error(extractErrorMessage(payload, cfgOptions.fallbackMessage))
+              };
+            }
+
+            return { data: payload, error: null };
+          }
+
+          function toSession(payload) {
+            if (!payload || typeof payload !== "object") {
+              return null;
+            }
+
+            if (!payload.access_token) {
+              return null;
+            }
+
+            return {
+              access_token: payload.access_token,
+              refresh_token: payload.refresh_token || "",
+              token_type: payload.token_type || "bearer",
+              expires_in: payload.expires_in,
+              expires_at: payload.expires_at,
+              user: payload.user || null
+            };
+          }
+
+          return {
+            auth: {
+              async signInWithPassword(credentials) {
+                const email = credentials && credentials.email ? credentials.email : "";
+                const password = credentials && credentials.password ? credentials.password : "";
+
+                const result = await request("/auth/v1/token?grant_type=password", {
+                  method: "POST",
+                  body: { email, password },
+                  fallbackMessage: "Não foi possível entrar."
+                });
+
+                if (result.error) {
+                  return { data: { session: null, user: null }, error: result.error };
+                }
+
+                const session = toSession(result.data);
+                authState.session = session;
+                return { data: { session, user: session ? session.user : null }, error: null };
+              },
+
+              async signUp(payload) {
+                const email = payload && payload.email ? payload.email : "";
+                const password = payload && payload.password ? payload.password : "";
+                const redirectTo = payload && payload.options ? payload.options.emailRedirectTo : undefined;
+
+                const result = await request("/auth/v1/signup", {
+                  method: "POST",
+                  body: {
+                    email,
+                    password,
+                    email_redirect_to: redirectTo
+                  },
+                  fallbackMessage: "Não foi possível criar a conta."
+                });
+
+                if (result.error) {
+                  return { data: { session: null, user: null }, error: result.error };
+                }
+
+                const session = toSession(result.data);
+                authState.session = session;
+                return {
+                  data: {
+                    session,
+                    user: (result.data && result.data.user) || (session && session.user) || null
+                  },
+                  error: null
+                };
+              },
+
+              async resetPasswordForEmail(email, options) {
+                const redirectTo = options && options.redirectTo ? options.redirectTo : undefined;
+
+                const result = await request("/auth/v1/recover", {
+                  method: "POST",
+                  body: {
+                    email,
+                    redirect_to: redirectTo
+                  },
+                  fallbackMessage: "Não foi possível enviar o link de recuperação."
+                });
+
+                return result.error
+                  ? { data: null, error: result.error }
+                  : { data: result.data, error: null };
+              },
+
+              async getSession() {
+                return { data: { session: authState.session }, error: null };
+              },
+
+              async setSession(payload) {
+                authState.session = {
+                  access_token: payload && payload.access_token ? payload.access_token : "",
+                  refresh_token: payload && payload.refresh_token ? payload.refresh_token : "",
+                  user: null
+                };
+
+                const userResult = await this.getUser();
+
+                if (userResult.error) {
+                  authState.session = null;
+                  return { data: { session: null }, error: userResult.error };
+                }
+
+                if (authState.session) {
+                  authState.session.user = userResult.data ? userResult.data.user : null;
+                }
+
+                return { data: { session: authState.session }, error: null };
+              },
+
+              async getUser() {
+                const accessToken = authState.session && authState.session.access_token
+                  ? authState.session.access_token
+                  : "";
+
+                if (!accessToken) {
+                  return {
+                    data: { user: null },
+                    error: new Error("Sessão inválida ou expirada.")
+                  };
+                }
+
+                const result = await request("/auth/v1/user", {
+                  method: "GET",
+                  accessToken,
+                  fallbackMessage: "Não foi possível carregar o usuário autenticado."
+                });
+
+                return result.error
+                  ? { data: { user: null }, error: result.error }
+                  : { data: { user: result.data || null }, error: null };
+              },
+
+              async updateUser(attributes) {
+                const accessToken = authState.session && authState.session.access_token
+                  ? authState.session.access_token
+                  : "";
+
+                if (!accessToken) {
+                  return {
+                    data: { user: null },
+                    error: new Error("Sessão inválida ou expirada.")
+                  };
+                }
+
+                const result = await request("/auth/v1/user", {
+                  method: "PUT",
+                  accessToken,
+                  body: attributes || {},
+                  fallbackMessage: "Não foi possível atualizar o usuário."
+                });
+
+                if (result.error) {
+                  return { data: { user: null }, error: result.error };
+                }
+
+                if (authState.session) {
+                  authState.session.user = result.data || authState.session.user;
+                }
+
+                return { data: { user: result.data || null }, error: null };
+              },
+
+              async signOut() {
+                authState.session = null;
+                return { error: null };
+              }
+            }
+          };
+        }
+
+        window.__ILLUMINATI_CREATE_SUPABASE_CLIENT__ = createSupabaseRestClient;
+      })();
+    </script>
+    <script phx-no-curly-interpolation>
+          document.addEventListener("DOMContentLoaded", function () {
+        const cfg = window.__ILLUMINATI_SUPABASE_CONFIG__;
+        const supabase = window.__ILLUMINATI_CREATE_SUPABASE_CLIENT__(cfg);
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || "";
+
+        const form = document.getElementById("invictSignUpForm");
+        const emailInput = document.getElementById("signUpEmail");
+        const passwordInput = document.getElementById("signUpPassword");
+        const submitButton = document.getElementById("signUpSubmitButton");
+        const statusBox = document.getElementById("invictAuthStatus");
+        const emailError = document.getElementById("signUpEmailError");
+        const passwordError = document.getElementById("signUpPasswordError");
+
+        if (!form || !emailInput || !passwordInput || !submitButton) return;
+
+        function showStatus(message, tone) {
+          if (!statusBox) return;
+          statusBox.textContent = message || "";
+          statusBox.hidden = !message;
+          statusBox.style.color = tone === "success" ? "#067647" : "";
+        }
+
+        function showFieldError(node, show, message) {
+          if (!node) return;
+          if (message) node.textContent = message;
+          node.hidden = !show;
+        }
+
+        function isEmailValid(value) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
+        }
+
+        function getEmailErrorMessage(value) {
+          const email = String(value || "").trim();
+
+          if (!email) {
+            return "Informe seu email.";
+          }
+
+          if (!isEmailValid(email)) {
+            return "Informe um email válido.";
+          }
+
+          return "";
+        }
+
+        function getPasswordErrorMessage(value) {
+          const password = String(value || "");
+
+          if (!password) {
+            return "Informe sua senha.";
+          }
+
+          if (password.length < 8) {
+            return "Informe uma senha de pelo menos 8 caracteres.";
+          }
+
+          return "";
+        }
+
+        let signUpSubmitted = false;
+        let signUpEmailTouched = false;
+        let signUpPasswordTouched = false;
+
+        function validateForm(options) {
+          const settings = options && typeof options === "object" ? options : {};
+          const forceShow = settings.forceShow === true;
+          const emailMessage = getEmailErrorMessage(emailInput.value);
+          const passwordMessage = getPasswordErrorMessage(passwordInput.value);
+
+          showFieldError(emailError, Boolean(emailMessage) && (forceShow || signUpSubmitted || signUpEmailTouched), emailMessage || "Informe um email válido.");
+          showFieldError(passwordError, Boolean(passwordMessage) && (forceShow || signUpSubmitted || signUpPasswordTouched), passwordMessage || "Informe uma senha de pelo menos 8 caracteres.");
+
+          emailInput.setAttribute("aria-invalid", String(Boolean(emailMessage) && (signUpSubmitted || signUpEmailTouched)));
+          passwordInput.setAttribute("aria-invalid", String(Boolean(passwordMessage) && (signUpSubmitted || signUpPasswordTouched)));
+          return !emailMessage && !passwordMessage;
+        }
+
+        async function syncServerSession(session, fallbackEmail) {
+          const accessToken = session && session.access_token ? session.access_token : "";
+          const email = (session && session.user && session.user.email) || fallbackEmail || "";
+
+          if (!accessToken) {
+            throw new Error("A sessão autenticada não foi encontrada.");
+          }
+
+          const response = await fetch(cfg.sessionSyncEndpoint || "/auth/session", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              accept: "application/json",
+              "x-csrf-token": csrfToken
+            },
+            credentials: "same-origin",
+            body: JSON.stringify({
+              access_token: accessToken,
+              email
+            })
+          });
+
+          const payload = await response.json().catch(function () { return {}; });
+
+          if (!response.ok || payload.ok === false) {
+            throw new Error(payload.error || "Não foi possível sincronizar a sessão do navegador com o servidor.");
+          }
+
+          try {
+            localStorage.setItem("illuminati-access-role", "authenticatedUser");
+            if (payload.email || email) {
+              localStorage.setItem("illuminati-authenticated-email", payload.email || email);
+            }
+          } catch (_error) {
+            // no-op
+          }
+
+          return payload;
+        }
+
+        emailInput.addEventListener("input", validateForm);
+        passwordInput.addEventListener("input", validateForm);
+        emailInput.addEventListener("blur", function () {
+          signUpEmailTouched = true;
+          validateForm();
+        });
+        passwordInput.addEventListener("blur", function () {
+          signUpPasswordTouched = true;
+          validateForm();
+        });
+        submitButton.disabled = false;
+        submitButton.setAttribute("aria-disabled", "false");
+        validateForm();
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          showStatus("", "error");
+          signUpSubmitted = true;
+          signUpEmailTouched = true;
+          signUpPasswordTouched = true;
+          if (!validateForm({ forceShow: true })) return;
+
+          const email = emailInput.value.trim();
+          const { data, error } = await supabase.auth.signUp({
+            email,
+            password: passwordInput.value,
+            options: {
+              emailRedirectTo: `${window.location.origin}${cfg.signUpRedirect}`
+            }
+          });
+
+          if (error) {
+            showStatus(error.message || "Não foi possível criar a conta.", "error");
+            return;
+          }
+
+          if (data && data.session && data.session.access_token) {
+            try {
+              await syncServerSession(data.session, email);
+            } catch (syncError) {
+              showStatus(syncError.message || "Não foi possível sincronizar a sessão autenticada.", "error");
+              return;
+            }
+
+            window.location.href = cfg.loginSuccessRedirect || "/";
+            return;
+          }
+
+          showStatus("Conta criada. Verifique seu e-mail para confirmar o cadastro.", "success");
+        });
+      });
+        
+    </script>
+  </body>
+</html>
