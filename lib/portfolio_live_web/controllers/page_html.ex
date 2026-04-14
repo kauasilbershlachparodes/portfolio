@@ -41,8 +41,10 @@ defmodule PortfolioLiveWeb.PageHTML do
               </path>
             </svg>
           </div>
+
           <div class="prev-next-nav-module__P3AUTG__previous">
             <div class="prev-next-nav-module__P3AUTG__label">Previous</div>
+
             <div class="prev-next-nav-module__P3AUTG__title">{@prev_page.title}</div>
           </div>
         </a>
@@ -63,15 +65,16 @@ defmodule PortfolioLiveWeb.PageHTML do
               </path>
             </svg>
           </div>
+
           <div class="prev-next-nav-module__P3AUTG__previous">
             <div class="prev-next-nav-module__P3AUTG__label">Previous</div>
+
             <div class="prev-next-nav-module__P3AUTG__title">–</div>
           </div>
         </div>
       <% end %>
 
       <div class="prev-next-nav-module__P3AUTG__separator"></div>
-
       <%!-- NEXT --%>
       <%= if @next_page do %>
         <a
@@ -81,8 +84,10 @@ defmodule PortfolioLiveWeb.PageHTML do
         >
           <div class="prev-next-nav-module__P3AUTG__next">
             <div class="prev-next-nav-module__P3AUTG__label">Next</div>
+
             <div class="prev-next-nav-module__P3AUTG__title">{@next_page.title}</div>
           </div>
+
           <div class="prev-next-nav-module__P3AUTG__navIcon">
             <svg
               class="prev-next-nav-module__P3AUTG__icon"

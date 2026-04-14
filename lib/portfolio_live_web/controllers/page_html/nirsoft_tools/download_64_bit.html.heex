@@ -3,9 +3,7 @@
     data-navigation-marker="content-Doc"
     style="width: 1px; height: 1px; opacity: 0; position: absolute;"
   >
-  </span>
-
-  <%!-- Top breadcrumb bar (desktop) --%>
+  </span> <%!-- Top breadcrumb bar (desktop) --%>
   <div class="relative mt-1 hidden h-0 items-center gap-x-3 lg:flex lg:h-6">
     <button
       id="sidebar-toggle-btn"
@@ -43,26 +41,32 @@
           class="link-module__Q1NRQq__link no-underline hover:text-(--geist-foreground) text-gray-900! whitespace-nowrap inline-block no-underline capitalize"
         >
           NirSoft Tools Freeware
-        </a><span class="ml-1 grid place-items-center text-gray-900!"><svg
-          data-testid="geist-icon"
-          height="16"
-          stroke-linejoin="round"
-          viewBox="0 0 16 16"
-          width="16"
-          style="width: 12px; height: 12px; color: currentcolor;"
-        ><path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M4.01526 15.3939L4.3107 14.7046L10.3107 0.704556L10.6061 0.0151978L11.9849 0.606077L11.6894 1.29544L5.68942 15.2954L5.39398 15.9848L4.01526 15.3939Z"
-          fill="currentColor"
-        ></path></svg></span>
+        </a>
+        <span class="ml-1 grid place-items-center text-gray-900!">
+          <svg
+            data-testid="geist-icon"
+            height="16"
+            stroke-linejoin="round"
+            viewBox="0 0 16 16"
+            width="16"
+            style="width: 12px; height: 12px; color: currentcolor;"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4.01526 15.3939L4.3107 14.7046L10.3107 0.704556L10.6061 0.0151978L11.9849 0.606077L11.6894 1.29544L5.68942 15.2954L5.39398 15.9848L4.01526 15.3939Z"
+              fill="currentColor"
+            >
+            </path>
+          </svg>
+        </span>
       </div>
+
       <span class="whitespace-nowrap text-gray-1000 inline-block no-underline">
         {@page_title}
       </span>
     </div>
   </div>
-
   <%!-- Page content --%>
   <div class="m-0 max-[640px]:-mt-10 p-0" id="page-content">
     <div class="linked-heading-module__rvMliW__container">
@@ -74,8 +78,7 @@
           class="linked-heading-module__rvMliW__target linked-heading-module__rvMliW__offsetTop"
           id="page-heading"
         >
-        </span>
-        <span class="linked-heading-module__rvMliW__title [&>p]:m-0">{@page_title}</span>
+        </span> <span class="linked-heading-module__rvMliW__title [&>p]:m-0">{@page_title}</span>
       </h1>
     </div>
 
@@ -85,6 +88,5 @@
 
     <div class="[&_p]:leading-[160%]"></div>
   </div>
-
   <.page_nav prev_page={@prev_page} next_page={@next_page} />
 </div>

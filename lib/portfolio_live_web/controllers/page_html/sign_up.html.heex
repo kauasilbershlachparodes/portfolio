@@ -76,13 +76,11 @@
         cursor: default !important;
       }
     </style>
-
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/133865f2485a8c29.css"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/3b25ddb074f183be.css"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/68989b8edc203dc6.css"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/7976e287dece7a25.css"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/7c0b7f75750ab849.css"} />
-
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/d5df9398139f9aea.css"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/data-vaul-drawer.css"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/db43014524f01bc2.css"} />
@@ -103,8 +101,7 @@
             aria-label="Ir para a tela de login"
           >
             <span class="invict-login-brand-wordmark">
-              <strong>A Elite Estrangeira</strong>
-              <small>by Invicti</small>
+              <strong>A Elite Estrangeira</strong> <small>by Invicti</small>
             </span>
             <span class="invict-login-brand-tagline">AppSec with Zero Noise</span>
           </a>
@@ -113,7 +110,9 @@
         <section class="invict-login-card" aria-label="Painel de criação de conta">
           <div class="invict-login-card-inner">
             <h1 id="invict-signup-title" class="invict-login-title">Create account</h1>
+
             <p class="invict-login-description">Create your account with email and password.</p>
+
             <p class="invict-login-error" id="invictAuthStatus" hidden></p>
 
             <form
@@ -168,7 +167,6 @@
                   Sign Up
                 </span>
               </button>
-
               <div
                 class="invict-login-options"
                 style="justify-content: center; margin-top: 16px; gap: 6px;"
@@ -207,6 +205,7 @@
         </nav>
       </footer>
     </main>
+
     <script phx-no-curly-interpolation>
       (function () {
         function createSupabaseRestClient(cfg) {
@@ -444,6 +443,7 @@
         window.__ILLUMINATI_CREATE_SUPABASE_CLIENT__ = createSupabaseRestClient;
       })();
     </script>
+
     <script phx-no-curly-interpolation>
           document.addEventListener("DOMContentLoaded", function () {
         const cfg = window.__ILLUMINATI_SUPABASE_CONFIG__;

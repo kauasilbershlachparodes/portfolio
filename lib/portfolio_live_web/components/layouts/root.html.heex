@@ -109,6 +109,7 @@
 
         .forensic-main-wrapper {
           --forensic-wrapper-inline-padding: 0px;
+          --forensic-sidebar-collapsed-width: 10px;
           width: 100%;
           max-width: var(--ds-page-width-with-margin);
           margin: 0 auto;
@@ -118,7 +119,7 @@
           width: 100%;
           display: flex;
           align-items: flex-start;
-          justify-content: center;
+          justify-content: flex-start;
           gap: 0;
         }
 
@@ -129,9 +130,9 @@
         }
 
         .forensic-left-sidebar[data-collapsed="true"] {
-          flex-basis: 10px !important;
-          min-width: 10px !important;
-          width: 10px !important;
+          flex-basis: var(--forensic-sidebar-collapsed-width) !important;
+          min-width: var(--forensic-sidebar-collapsed-width) !important;
+          width: var(--forensic-sidebar-collapsed-width) !important;
           padding-right: 0 !important;
         }
 
@@ -618,90 +619,105 @@
                       d="M485 650.4h230L600 451.21z"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="1"
                       d="M715 650.4 L600 451.21 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.93"
                       d="M715 650.4 L600 460.33 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.87"
                       d="M715 650.4 L600 469.44 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.8"
                       d="M715 650.4 L600 478.56 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.73"
                       d="M715 650.4 L600 487.67 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.67"
                       d="M715 650.4 L600 496.79 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.6"
                       d="M715 650.4 L600 505.9 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.53"
                       d="M715 650.4 L600 515.02 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.47"
                       d="M715 650.4 L600 524.13 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.4"
                       d="M715 650.4 L600 533.25 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.33"
                       d="M715 650.4 L600 542.36 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.27"
                       d="M715 650.4 L600 551.48 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.2"
                       d="M715 650.4 L600 560.59 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.13"
                       d="M715 650.4 L600 569.71 L485 650.4"
                     >
                     </path>
+
                     <path
                       stroke="var(--geist-foreground, currentColor)"
                       opacity="0.07"
@@ -731,6 +747,7 @@
                     </path>
                   </svg>
                 </div>
+
                 <a
                   aria-label="A Elite Estrangeira IDS"
                   class="text-zinc-800 dark:text-zinc-100 min-w-max"
@@ -750,6 +767,7 @@
                       fill="currentColor"
                     >
                     </path>
+
                     <rect
                       height="75"
                       rx="37.5"
@@ -760,6 +778,7 @@
                       y="7.5"
                     >
                     </rect>
+
                     <path
                       d="M1421 23.332H1430.241V66.5H1421V23.332ZM1446 23.332H1463.5C1475.5 23.332 1483 31 1483 44.916C1483 58.9 1475.5 66.5 1463.5 66.5H1446V23.332ZM1455.241 31.1144V58.7176H1462.78C1470.8 58.7176 1474.18 54.2792 1474.18 44.916C1474.18 35.5528 1470.8 31.1144 1462.78 31.1144H1455.241ZM1497.6 51.8472C1498.39 56.468 1501.68 59.508 1507.09 59.508C1511.22 59.508 1514.02 57.8664 1513.96 54.7048C1513.9 51.5432 1511.22 49.7192 1504.47 48.0776C1495.11 45.828 1489.09 42.0584 1489.09 35.1272C1489.09 27.284 1495.66 22.3592 1505.51 22.3592C1515.11 22.3592 1521.68 28.2568 1522.71 36.9512L1513.47 37.4376C1512.98 32.8776 1509.82 30.02 1505.26 30.02C1501.25 30.02 1498.39 32.0872 1498.58 35.2488C1498.7 38.8968 1502.95 40.1128 1507.57 41.268C1517.24 43.396 1523.38 47.5304 1523.38 54.4008C1523.38 62.6088 1516.15 67.2296 1506.85 67.2296C1496.33 67.2296 1488.91 61.3928 1488.3 52.2728L1497.6 51.8472Z"
                       fill="currentColor"
@@ -845,6 +864,7 @@
                         </span>
                       </button>
                     </li>
+
                     <li>
                       <button
                         aria-controls="forensic-content-resources"
@@ -880,6 +900,7 @@
                         </span>
                       </button>
                     </li>
+
                     <li>
                       <button
                         aria-controls="forensic-content-solutions"
@@ -915,6 +936,7 @@
                         </span>
                       </button>
                     </li>
+
                     <li>
                       <button
                         aria-controls="forensic-content-learning"
@@ -950,6 +972,7 @@
                         </span>
                       </button>
                     </li>
+
                     <li>
                       <button
                         class="navigation-menu-module__AENi4G__trigger"
@@ -959,6 +982,7 @@
                         Enterprise
                       </button>
                     </li>
+
                     <li>
                       <button
                         class="navigation-menu-module__AENi4G__trigger"
@@ -970,6 +994,7 @@
                     </li>
                   </ul>
                 </div>
+
                 <div
                   class="navigation-menu-module__AENi4G__viewportPosition"
                   data-header-nav-viewport-position="true"
@@ -1010,6 +1035,7 @@
                               AI Cloud
                             </a>
                           </h5>
+
                           <ul
                             aria-describedby="heading-security"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -1040,10 +1066,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     v0
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1054,6 +1082,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="navigation-menu-module__AENi4G__menuSubLink"
@@ -1082,10 +1111,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     AI SDK
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1096,6 +1127,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1121,11 +1153,13 @@
                                         fill="currentColor"
                                       >
                                       </path>
+
                                       <path
                                         d="M14.5 4.5V5H13.5V4.5C13.5 3.94772 13.0523 3.5 12.5 3.5H12V3V2.5H12.5C13.0523 2.5 13.5 2.05228 13.5 1.5V1H14H14.5V1.5C14.5 2.05228 14.9477 2.5 15.5 2.5H16V3V3.5H15.5C14.9477 3.5 14.5 3.94772 14.5 4.5Z"
                                         fill="currentColor"
                                       >
                                       </path>
+
                                       <path
                                         d="M8.40706 4.92939L8.5 4H9.5L9.59294 4.92939C9.82973 7.29734 11.7027 9.17027 14.0706 9.40706L15 9.5V10.5L14.0706 10.5929C11.7027 10.8297 9.82973 12.7027 9.59294 15.0706L9.5 16H8.5L8.40706 15.0706C8.17027 12.7027 6.29734 10.8297 3.92939 10.5929L3 10.5V9.5L3.92939 9.40706C6.29734 9.17027 8.17027 7.29734 8.40706 4.92939Z"
                                         fill="currentColor"
@@ -1134,10 +1168,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     AI Gateway
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1148,6 +1184,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1171,18 +1208,22 @@
                                       <g fill="currentColor">
                                         <path d="m1.87061 12.709.50878.291v.6318.46h-1.800777l.913087-1.5986zm2.54394-.1172v1.5h-1.01758v-1.5zm2.03516 0v1.5h-1.01758v-1.5zm2.03515 0v1.5h-1.01757v-1.5zm2.03514 0v1.5h-1.01756v-1.5zm2.0352 0v1.5h-1.0176v-1.5zm2.8183 1.5h-1.8007v-.46-.6328l.5087-.29.378-.2158zm-11.48922-2.7627-.54492.9541-1.30274-.7441.5459-.9541zm10.03032.21-1.3028.7441-.5449-.9541 1.3027-.7441zm-9.21196-1.64066-.27344.47656-1.30176-.74414.27246-.47656zm8.12206-.26758-1.3027.74414-.2725-.47656 1.3027-.74414z">
                                         </path>
+
                                         <path d="m12.4438 8.96362-1.3027.74414-3.16503-5.53906-3.16406 5.53906-1.30273-.74414 4.46679-7.81738z">
                                         </path>
+
                                         <path d="m12.1201 6.25586c.9134.15439 1.7896.3717 2.3819.63672.2959.13244.5807.29676.8027.50586.2222.20928.4453.5284.4453.94922-.0001.67816-.5565 1.08681-.9346 1.29785-.4413.24632-1.0302.44409-1.6933.60059-1.3382.3159-3.14876.5039-5.1221.5039s-3.78392-.188-5.12207-.5039c-.66312-.1565-1.25202-.35427-1.69336-.60059-.354472-.19786-.866169-.56934-.928711-1.17383l-.005859-.12402.009766-.15332c.045815-.34573.241161-.61281.435546-.7959.222012-.2091.506778-.37342.802738-.50586.59356-.26559 1.39584-.47552 2.31054-.62988l-1.00195 1.7539c-.2744.07842-.50726.161-.69531.24512-.06657.02979-.12403.05857-.17285.08496.26877.14551.69695.30083 1.28418.43945 1.19534.28217 2.88475.46387 4.77734.46387s3.582-.1817 4.7773-.46387c.5867-.13849 1.0144-.29406 1.2832-.43945-.0486-.02628-.1056-.05533-.1718-.08496-.2059-.09209-.4654-.18261-.7744-.26758z">
                                         </path>
                                       </g>
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Vercel Agent
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1193,6 +1234,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1223,10 +1265,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Sandbox
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1239,6 +1283,7 @@
                             </li>
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -1248,6 +1293,7 @@
                           >
                             Core Platform
                           </h5>
+
                           <ul
                             aria-describedby="heading-infrastructure"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -1282,10 +1328,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     CI/CD
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1296,6 +1344,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1326,10 +1375,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Content Delivery
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1340,6 +1391,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1370,10 +1422,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Fluid Compute
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1384,6 +1438,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1414,10 +1469,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Observability
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1430,6 +1487,7 @@
                             </li>
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -1446,6 +1504,7 @@
                               Security
                             </a>
                           </h5>
+
                           <ul
                             aria-describedby="heading-frameworks"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -1480,10 +1539,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Bot Management
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1494,6 +1555,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1522,10 +1584,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     BotID
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1536,6 +1600,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1566,10 +1631,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Platform Security
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1580,6 +1647,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1609,10 +1677,12 @@
                                         >
                                         </path>
                                       </g>
+
                                       <defs>
                                         <clippath id="clip0_4629_2028">
                                           <rect fill="white" height="16" width="16"></rect>
                                         </clippath>
+
                                         <mask fill="white" id="path-1-inside-1_4629_2028">
                                           <path
                                             clip-rule="evenodd"
@@ -1625,10 +1695,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Web Application Firewall
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1643,6 +1715,7 @@
                         </li>
                       </ul>
                     </div>
+
                     <div
                       aria-hidden="true"
                       aria-labelledby="forensic-trigger-resources"
@@ -1663,6 +1736,7 @@
                           >
                             Company
                           </h5>
+
                           <ul
                             aria-describedby="heading-company"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -1696,10 +1770,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Customers
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1710,6 +1786,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1739,10 +1816,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Blog
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1753,6 +1832,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1782,10 +1862,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Changelog
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1796,6 +1878,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1825,10 +1908,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Press
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1839,6 +1924,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1868,10 +1954,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Events
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1884,6 +1972,7 @@
                             </li>
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -1893,6 +1982,7 @@
                           >
                             Learn
                           </h5>
+
                           <ul
                             aria-describedby="heading-learn"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -1926,10 +2016,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Docs
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1940,6 +2032,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -1969,10 +2062,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Academy
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -1983,6 +2078,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2012,10 +2108,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Knowledge Base
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2026,6 +2124,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2057,10 +2156,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Community
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2073,6 +2174,7 @@
                             </li>
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -2082,6 +2184,7 @@
                           >
                             Open Source
                           </h5>
+
                           <ul
                             aria-describedby="heading-frameworks"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -2118,6 +2221,7 @@
                                           strokewidth="1.25"
                                         >
                                         </circle>
+
                                         <path
                                           d="M10.63 11V5"
                                           stroke="url(#paint0_linear_53_108_r_29_)"
@@ -2125,6 +2229,7 @@
                                           strokewidth="1.25"
                                         >
                                         </path>
+
                                         <path
                                           cliprule="evenodd"
                                           d="M5.995 5.00087V5H4.745V11H5.995V6.96798L12.3615 14.7076C12.712 14.4793 13.0434 14.2242 13.353 13.9453L5.99527 5.00065L5.995 5.00087Z"
@@ -2133,6 +2238,7 @@
                                         >
                                         </path>
                                       </g>
+
                                       <defs>
                                         <lineargradient
                                           gradientunits="userSpaceOnUse"
@@ -2143,21 +2249,25 @@
                                           y2="11"
                                         >
                                           <stop stop-color="white"></stop>
+
                                           <stop
                                             offset="0.609375"
                                             stop-color="white"
                                             stop-opacity="0.57"
                                           >
                                           </stop>
+
                                           <stop
                                             offset="0.796875"
                                             stop-color="white"
                                             stop-opacity="0"
                                           >
                                           </stop>
+
                                           <stop offset="1" stop-color="white" stop-opacity="0">
                                           </stop>
                                         </lineargradient>
+
                                         <lineargradient
                                           gradientunits="userSpaceOnUse"
                                           id="paint1_linear_53_108_r_29_"
@@ -2167,15 +2277,18 @@
                                           y2="13.3992"
                                         >
                                           <stop stop-color="white"></stop>
+
                                           <stop offset="1" stop-color="white" stop-opacity="0">
                                           </stop>
                                         </lineargradient>
+
                                         <clippath id="clip0_53_108">
                                           <rect fill="red" height="16" width="16"></rect>
                                         </clippath>
                                       </defs>
                                     </svg>
                                   </div>
+
                                   <div class="flex flex-col items-center justify-center flex-initial navigation-menu-module__AENi4G__icon navigation-menu-module__AENi4G__iconHover">
                                     <svg
                                       class="invert-theme"
@@ -2198,6 +2311,7 @@
                                           strokewidth="1.25"
                                         >
                                         </circle>
+
                                         <path
                                           d="M10.63 11V5"
                                           stroke="url(#paint0_linear_53_108_r_2a_)"
@@ -2205,6 +2319,7 @@
                                           strokewidth="1.25"
                                         >
                                         </path>
+
                                         <path
                                           cliprule="evenodd"
                                           d="M5.995 5.00087V5H4.745V11H5.995V6.96798L12.3615 14.7076C12.712 14.4793 13.0434 14.2242 13.353 13.9453L5.99527 5.00065L5.995 5.00087Z"
@@ -2213,6 +2328,7 @@
                                         >
                                         </path>
                                       </g>
+
                                       <defs>
                                         <lineargradient
                                           gradientunits="userSpaceOnUse"
@@ -2223,21 +2339,25 @@
                                           y2="11"
                                         >
                                           <stop stop-color="white"></stop>
+
                                           <stop
                                             offset="0.609375"
                                             stop-color="white"
                                             stop-opacity="0.57"
                                           >
                                           </stop>
+
                                           <stop
                                             offset="0.796875"
                                             stop-color="white"
                                             stop-opacity="0"
                                           >
                                           </stop>
+
                                           <stop offset="1" stop-color="white" stop-opacity="0">
                                           </stop>
                                         </lineargradient>
+
                                         <lineargradient
                                           gradientunits="userSpaceOnUse"
                                           id="paint1_linear_53_108_r_2a_"
@@ -2247,9 +2367,11 @@
                                           y2="13.3992"
                                         >
                                           <stop stop-color="white"></stop>
+
                                           <stop offset="1" stop-color="white" stop-opacity="0">
                                           </stop>
                                         </lineargradient>
+
                                         <clippath id="clip0_53_108">
                                           <rect fill="red" height="16" width="16"></rect>
                                         </clippath>
@@ -2257,10 +2379,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Next.js
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2271,6 +2395,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="navigation-menu-module__AENi4G__menuSubLink"
@@ -2297,6 +2422,7 @@
                                       </path>
                                     </svg>
                                   </div>
+
                                   <div class="flex flex-col items-center justify-center flex-initial navigation-menu-module__AENi4G__icon navigation-menu-module__AENi4G__iconHover">
                                     <svg
                                       class="invert-theme"
@@ -2315,10 +2441,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Nuxt
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2329,6 +2457,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="navigation-menu-module__AENi4G__menuSubLink"
@@ -2353,16 +2482,19 @@
                                         fill="#FF3E00"
                                       >
                                       </path>
+
                                       <path
                                         d="M6.8958 14.0881C5.68902 14.4 4.428 13.9254 3.72292 12.9085C3.28902 12.3119 3.12631 11.5661 3.24834 10.8339C3.27546 10.7119 3.30258 10.6034 3.3297 10.4814L3.3975 10.2644L3.58733 10.4C4.03478 10.7254 4.52292 10.9695 5.05173 11.1322L5.18733 11.1729L5.17377 11.3085C5.16021 11.4983 5.21445 11.7017 5.32292 11.8644C5.53987 12.1763 5.91953 12.3254 6.28563 12.2305C6.36699 12.2034 6.44834 12.1763 6.51614 12.1356L10.2314 9.76271C10.4212 9.64068 10.5433 9.46441 10.5839 9.24746C10.6246 9.03051 10.5704 8.8 10.4483 8.62373C10.2314 8.31186 9.85173 8.17627 9.48563 8.27119C9.40428 8.29831 9.32292 8.32542 9.25512 8.3661L7.83139 9.27458C7.60089 9.42373 7.34326 9.5322 7.07207 9.6C5.86529 9.91187 4.60428 9.43729 3.89919 8.42034C3.47885 7.82373 3.30258 7.07797 3.43817 6.34576C3.56021 5.64068 3.99411 5.00339 4.60428 4.62373L8.33309 2.25085C8.5636 2.1017 8.82123 1.99322 9.09241 1.91186C10.2992 1.6 11.5602 2.07458 12.2653 3.09153C12.6992 3.68814 12.8619 4.4339 12.7399 5.1661C12.7128 5.28814 12.6856 5.39661 12.645 5.51864L12.5772 5.73559L12.3873 5.6C11.9399 5.27458 11.4517 5.03051 10.9229 4.8678L10.7873 4.82712L10.8009 4.69153C10.8144 4.50169 10.7602 4.29831 10.6517 4.13559C10.4348 3.82373 10.0551 3.68814 9.68902 3.78305C9.60767 3.81017 9.52631 3.83729 9.45851 3.87797L5.74326 6.25085C5.55343 6.37288 5.43139 6.54915 5.39072 6.7661C5.35004 6.98305 5.40428 7.21356 5.52631 7.38983C5.74326 7.7017 6.12292 7.83729 6.48902 7.74237C6.57038 7.71525 6.65173 7.68814 6.71953 7.64746L8.14326 6.73898C8.37377 6.58983 8.63139 6.48136 8.90258 6.4C10.1094 6.08814 11.3704 6.56271 12.0755 7.57966C12.5094 8.17627 12.6721 8.92203 12.55 9.65424C12.428 10.3593 11.9941 10.9966 11.3839 11.3763L7.65512 13.7492C7.42461 13.8983 7.16699 14.0068 6.8958 14.0881Z"
                                         fill="white"
                                       >
                                       </path>
+
                                       <defs>
                                         <rect fill="white" height="16" width="16"></rect>
                                       </defs>
                                     </svg>
                                   </div>
+
                                   <div class="flex flex-col items-center justify-center flex-initial navigation-menu-module__AENi4G__icon navigation-menu-module__AENi4G__iconHover">
                                     <svg
                                       class="invert-theme"
@@ -2378,21 +2510,25 @@
                                         fill="#FF3E00"
                                       >
                                       </path>
+
                                       <path
                                         d="M6.8958 14.0881C5.68902 14.4 4.428 13.9254 3.72292 12.9085C3.28902 12.3119 3.12631 11.5661 3.24834 10.8339C3.27546 10.7119 3.30258 10.6034 3.3297 10.4814L3.3975 10.2644L3.58733 10.4C4.03478 10.7254 4.52292 10.9695 5.05173 11.1322L5.18733 11.1729L5.17377 11.3085C5.16021 11.4983 5.21445 11.7017 5.32292 11.8644C5.53987 12.1763 5.91953 12.3254 6.28563 12.2305C6.36699 12.2034 6.44834 12.1763 6.51614 12.1356L10.2314 9.76271C10.4212 9.64068 10.5433 9.46441 10.5839 9.24746C10.6246 9.03051 10.5704 8.8 10.4483 8.62373C10.2314 8.31186 9.85173 8.17627 9.48563 8.27119C9.40428 8.29831 9.32292 8.32542 9.25512 8.3661L7.83139 9.27458C7.60089 9.42373 7.34326 9.5322 7.07207 9.6C5.86529 9.91187 4.60428 9.43729 3.89919 8.42034C3.47885 7.82373 3.30258 7.07797 3.43817 6.34576C3.56021 5.64068 3.99411 5.00339 4.60428 4.62373L8.33309 2.25085C8.5636 2.1017 8.82123 1.99322 9.09241 1.91186C10.2992 1.6 11.5602 2.07458 12.2653 3.09153C12.6992 3.68814 12.8619 4.4339 12.7399 5.1661C12.7128 5.28814 12.6856 5.39661 12.645 5.51864L12.5772 5.73559L12.3873 5.6C11.9399 5.27458 11.4517 5.03051 10.9229 4.8678L10.7873 4.82712L10.8009 4.69153C10.8144 4.50169 10.7602 4.29831 10.6517 4.13559C10.4348 3.82373 10.0551 3.68814 9.68902 3.78305C9.60767 3.81017 9.52631 3.83729 9.45851 3.87797L5.74326 6.25085C5.55343 6.37288 5.43139 6.54915 5.39072 6.7661C5.35004 6.98305 5.40428 7.21356 5.52631 7.38983C5.74326 7.7017 6.12292 7.83729 6.48902 7.74237C6.57038 7.71525 6.65173 7.68814 6.71953 7.64746L8.14326 6.73898C8.37377 6.58983 8.63139 6.48136 8.90258 6.4C10.1094 6.08814 11.3704 6.56271 12.0755 7.57966C12.5094 8.17627 12.6721 8.92203 12.55 9.65424C12.428 10.3593 11.9941 10.9966 11.3839 11.3763L7.65512 13.7492C7.42461 13.8983 7.16699 14.0068 6.8958 14.0881Z"
                                         fill="white"
                                       >
                                       </path>
+
                                       <defs>
                                         <rect fill="white" height="16" width="16"></rect>
                                       </defs>
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Svelte
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2403,6 +2539,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2430,6 +2567,7 @@
                                           fill-rule="evenodd"
                                         >
                                         </path>
+
                                         <rect
                                           fill="transparent"
                                           height="7"
@@ -2442,6 +2580,7 @@
                                         >
                                         </rect>
                                       </g>
+
                                       <defs>
                                         <lineargradient
                                           gradientunits="userSpaceOnUse"
@@ -2452,14 +2591,17 @@
                                           y2="8.82805"
                                         >
                                           <stop stop-color="#0096FF"></stop>
+
                                           <stop offset="1" stop-color="#FF1E56"></stop>
                                         </lineargradient>
+
                                         <clippath id="clip0_872_3188">
                                           <rect fill="white" height="16" width="16"></rect>
                                         </clippath>
                                       </defs>
                                     </svg>
                                   </div>
+
                                   <div class="flex flex-col items-center justify-center flex-initial navigation-menu-module__AENi4G__icon navigation-menu-module__AENi4G__iconHover">
                                     <svg
                                       class="invert-theme"
@@ -2478,6 +2620,7 @@
                                           fill-rule="evenodd"
                                         >
                                         </path>
+
                                         <rect
                                           fill="transparent"
                                           height="7"
@@ -2490,6 +2633,7 @@
                                         >
                                         </rect>
                                       </g>
+
                                       <defs>
                                         <lineargradient
                                           gradientunits="userSpaceOnUse"
@@ -2500,8 +2644,10 @@
                                           y2="8.82805"
                                         >
                                           <stop stop-color="#0096FF"></stop>
+
                                           <stop offset="1" stop-color="#FF1E56"></stop>
                                         </lineargradient>
+
                                         <clippath id="clip0_872_3188">
                                           <rect fill="white" height="16" width="16"></rect>
                                         </clippath>
@@ -2509,10 +2655,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Turborepo
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2527,6 +2675,7 @@
                         </li>
                       </ul>
                     </div>
+
                     <div
                       aria-hidden="true"
                       aria-labelledby="forensic-trigger-solutions"
@@ -2547,6 +2696,7 @@
                           >
                             Use Cases
                           </h5>
+
                           <ul
                             aria-describedby="heading-use-case"
                             class="navigation-menu-module__AENi4G__links navigation-menu-module__AENi4G__columnReset"
@@ -2575,11 +2725,13 @@
                                         fill="currentColor"
                                       >
                                       </path>
+
                                       <path
                                         d="M14.5 4.5V5H13.5V4.5C13.5 3.94772 13.0523 3.5 12.5 3.5H12V3V2.5H12.5C13.0523 2.5 13.5 2.05228 13.5 1.5V1H14H14.5V1.5C14.5 2.05228 14.9477 2.5 15.5 2.5H16V3V3.5H15.5C14.9477 3.5 14.5 3.94772 14.5 4.5Z"
                                         fill="currentColor"
                                       >
                                       </path>
+
                                       <path
                                         d="M8.40706 4.92939L8.5 4H9.5L9.59294 4.92939C9.82973 7.29734 11.7027 9.17027 14.0706 9.40706L15 9.5V10.5L14.0706 10.5929C11.7027 10.8297 9.82973 12.7027 9.59294 15.0706L9.5 16H8.5L8.40706 15.0706C8.17027 12.7027 6.29734 10.8297 3.92939 10.5929L3 10.5V9.5L3.92939 9.40706C6.29734 9.17027 8.17027 7.29734 8.40706 4.92939Z"
                                         fill="currentColor"
@@ -2588,10 +2740,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     AI Apps
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2602,6 +2756,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2631,10 +2786,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Composable Commerce
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2645,6 +2802,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2674,10 +2832,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Marketing Sites
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2688,6 +2848,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2717,10 +2878,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Multi-tenant Platforms
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2731,6 +2894,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2760,10 +2924,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Web Apps
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2776,6 +2942,7 @@
                             </li>
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -2785,6 +2952,7 @@
                           >
                             Tools
                           </h5>
+
                           <ul
                             aria-describedby="heading-get-started"
                             class="navigation-menu-module__AENi4G__links navigation-menu-module__AENi4G__columnReset"
@@ -2818,10 +2986,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Marketplace
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2832,6 +3002,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2861,10 +3032,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Templates
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2875,6 +3048,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -2904,10 +3078,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Partner Finder
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2920,6 +3096,7 @@
                             </li>
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -2929,6 +3106,7 @@
                           >
                             Users
                           </h5>
+
                           <ul
                             aria-describedby="heading-user-solutions"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -2960,10 +3138,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Platform Engineers
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -2974,6 +3154,7 @@
                                 </div>
                               </a>
                             </li>
+
                             <li>
                               <a
                                 class="link-module__Q1NRQq__link no-underline navigation-menu-module__AENi4G__menuSubLink"
@@ -3000,6 +3181,7 @@
                                         style="stroke:#E5484D;stroke:color(display-p3 0.8980 0.2824 0.3020);stroke-opacity:1;"
                                       >
                                       </path>
+
                                       <path
                                         d="M10.5 9.5L15.75 10.5"
                                         stroke="#52AEFF"
@@ -3007,6 +3189,7 @@
                                         style="stroke:#52AEFF;stroke:color(display-p3 0.3216 0.6824 1.0000);stroke-opacity:1;"
                                       >
                                       </path>
+
                                       <path
                                         d="M10 8L15.75 6"
                                         stroke="#45DEC4"
@@ -3014,6 +3197,7 @@
                                         style="stroke:#45DEC4;stroke:color(display-p3 0.2706 0.8706 0.7686);stroke-opacity:1;"
                                       >
                                       </path>
+
                                       <path
                                         clip-rule="evenodd"
                                         d="M6.14568 3.56625L7 2L7.85432 3.56625L12.1818 11.5L13 13H11.2914H2.70863H1L1.81818 11.5L3.31818 8.75H0V7.25H4.13636L6.14568 3.56625ZM3.52681 11.5L7 5.13249L10.4732 11.5H3.52681Z"
@@ -3024,10 +3208,12 @@
                                     </svg>
                                   </div>
                                 </div>
+
                                 <div class="navigation-menu-module__AENi4G__menuSubLinkContent">
                                   <div class="navigation-menu-module__AENi4G__menuItemHeading">
                                     Design Engineers
                                   </div>
+
                                   <p
                                     class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__menuItemText"
                                     data-version="v1"
@@ -3042,6 +3228,7 @@
                         </li>
                       </ul>
                     </div>
+
                     <div
                       aria-hidden="true"
                       aria-labelledby="forensic-trigger-learning"
@@ -3062,12 +3249,14 @@
                           >
                             Section 1
                           </h5>
+
                           <ul
                             aria-describedby="heading-learning-section-1"
                             class="navigation-menu-module__AENi4G__columnReset"
                           >
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -3077,12 +3266,14 @@
                           >
                             Section 2
                           </h5>
+
                           <ul
                             aria-describedby="heading-learning-section-2"
                             class="navigation-menu-module__AENi4G__columnReset"
                           >
                           </ul>
                         </li>
+
                         <li class="navigation-menu-module__AENi4G__links">
                           <h5
                             class="text-module__eElGjq__wrapper navigation-menu-module__AENi4G__heading"
@@ -3092,6 +3283,7 @@
                           >
                             Section 3
                           </h5>
+
                           <ul
                             aria-describedby="heading-learning-section-3"
                             class="navigation-menu-module__AENi4G__columnReset"
@@ -3105,6 +3297,7 @@
               </nav>
             </div>
           </div>
+
           <div class="header-module__6nzVrW__right" id="forensic-header-actions">
             <div class="flex items-center justify-end gap-3 flex-1 min-w-0">
               <div class="flex min-[1150px]:hidden w-full" id="docs-header-mobile">
@@ -3125,9 +3318,11 @@
                   </div>
 
                   <button
-                    type="submit"
+                    id="docs-header-mobile-ask-ai-btn"
+                    type="button"
                     tabindex="0"
                     data-react-aria-pressable="true"
+                    data-ask-ai-toggle="true"
                     aria-label="Ask AI"
                     class="outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative cursor-pointer select-none transform translate-z-0 flex text-[var(--themed-fg,_var(--ds-background-100))] bg-[var(--themed-bg,_var(--ds-gray-1000))] font-medium !px-(--geist-gap-half) max-w-full items-center justify-center transition-[border-color,background,color,transform,box-shadow] duration-[150ms] ease-in-out data-[focus]:shadow-[var(--ds-focus-ring)] [&_svg]:shrink-0 disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:text-[var(--ds-gray-700)] disabled:bg-[var(--ds-gray-100)] aria-disabled:text-[var(--ds-gray-700)] aria-disabled:bg-[var(--ds-gray-100)] disabled:![--themed-border:_var(--ds-gray-400)] [--x-padding:6px] [--height:32px] !pl-[var(--x-padding)] !pr-[var(--x-padding)] rounded-md [--themed-bg:_var(--ds-background-100)] shadow-[0_0_0_1px_var(--themed-border,_transparent)] [--themed-hover-bg:_var(--ds-gray-alpha-200)] [--themed-fg:_var(--ds-gray-1000)] [--themed-border:_var(--ds-gray-400)] data-[focus]:shadow-[0_0_0_1px_var(--themed-border,_transparent),0_0_0_2px_var(--ds-background-100),0_0_0_4px_var(--ds-focus-color)] data-[focus]:transition-none text-(length:--geist-form-small-font) [--spinner-size:16px] h-[var(--height)] data-hover:bg-[var(--ds-gray-100)] dark-theme:data-hover:bg-[var(--ds-gray-200)] data-hover:text-[var(--themed-fg)] data-hover:disabled:bg-[var(--ds-gray-100)]"
                     data-geist-button=""
@@ -3140,6 +3335,7 @@
                   </button>
                 </div>
               </div>
+
               <div class="flex lg:justify-end gap-3 relative">
                 <div
                   id="docs-header-desktop"
@@ -3161,9 +3357,11 @@
                   </div>
 
                   <button
-                    type="submit"
+                    id="docs-header-desktop-ask-ai-btn"
+                    type="button"
                     tabindex="0"
                     data-react-aria-pressable="true"
+                    data-ask-ai-toggle="true"
                     aria-label="Ask AI"
                     class="outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative cursor-pointer select-none transform translate-z-0 flex text-[var(--themed-fg,_var(--ds-background-100))] bg-[var(--themed-bg,_var(--ds-gray-1000))] font-medium !px-(--geist-gap-half) max-w-full items-center justify-center transition-[border-color,background,color,transform,box-shadow] duration-[150ms] ease-in-out data-[focus]:shadow-[var(--ds-focus-ring)] [&_svg]:shrink-0 disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:text-[var(--ds-gray-700)] disabled:bg-[var(--ds-gray-100)] aria-disabled:text-[var(--ds-gray-700)] aria-disabled:bg-[var(--ds-gray-100)] disabled:![--themed-border:_var(--ds-gray-400)] [--x-padding:6px] [--height:32px] !pl-[var(--x-padding)] !pr-[var(--x-padding)] rounded-md [--themed-bg:_var(--ds-background-100)] shadow-[0_0_0_1px_var(--themed-border,_transparent)] [--themed-hover-bg:_var(--ds-gray-alpha-200)] [--themed-fg:_var(--ds-gray-1000)] [--themed-border:_var(--ds-gray-400)] data-[focus]:shadow-[0_0_0_1px_var(--themed-border,_transparent),0_0_0_2px_var(--ds-background-100),0_0_0_4px_var(--ds-focus-color)] data-[focus]:transition-none text-(length:--geist-form-small-font) [--spinner-size:16px] h-[var(--height)] data-hover:bg-[var(--ds-gray-100)] dark-theme:data-hover:bg-[var(--ds-gray-200)] data-hover:text-[var(--themed-fg)] data-hover:disabled:bg-[var(--ds-gray-100)]"
                     data-geist-button=""
@@ -3175,6 +3373,7 @@
                     <span class="truncate inline-block px-1.5">Ask AI</span>
                   </button>
                 </div>
+
                 <div
                   class="size-8 hidden min-[1151px]:grid place-items-center relative"
                   id="docs-header-avatar"
@@ -3219,12 +3418,14 @@
                     </button>
                   </div>
                 </div>
+
                 <div
                   id="layout-interactions-wrapper"
                   phx-hook="LayoutInteractionsHook"
                   style="display: none;"
                 >
                 </div>
+
                 <div class="absolute right-0 top-full mt-2" hidden="" id="avatar-menu">
                   <div
                     class="z-[2001] [--border-color:var(--accents-2)]"
@@ -3262,6 +3463,7 @@
                           <span id="menu-item-_r_61_">Log In</span>
                         </a>
                       </li>
+
                       <li
                         class="auth-guest-only"
                         data-geist-menu-item=""
@@ -3282,6 +3484,7 @@
                           <span id="menu-item-_r_62_">Sign Up</span>
                         </a>
                       </li>
+
                       <li class="auth-user-only" data-geist-menu-item="" role="none">
                         <form
                           action={~p"/logout"}
@@ -3314,6 +3517,7 @@
                   #mobile-menu-toggle { display: none; }
                 }
               </style>
+
               <div class="mobile-menu-module__ArrJYG__root" id="mobile-menu-toggle">
                 <div class="toggle-module__HksKKG__mobileMenuToggleWrapper">
                   <button
@@ -3328,6 +3532,7 @@
                     type="button"
                   >
                     <div class="toggle-module__HksKKG__bar" data-position="top"></div>
+
                     <div class="toggle-module__HksKKG__bar" data-position="bottom"></div>
                   </button>
                 </div>
@@ -3372,6 +3577,7 @@
                       </span>
                     </button>
                   </div>
+
                   <div class="forensic-mobile-header-menu__body">
                     <section class="forensic-mobile-header-menu__ctas">
                       <a
@@ -3468,6 +3674,7 @@
                           >
                           </div>
                         </li>
+
                         <li class="forensic-mobile-header-menu__section">
                           <button
                             type="button"
@@ -3501,6 +3708,7 @@
                           >
                           </div>
                         </li>
+
                         <li class="forensic-mobile-header-menu__section">
                           <button
                             type="button"
@@ -3534,11 +3742,13 @@
                           >
                           </div>
                         </li>
+
                         <li>
                           <a class="forensic-mobile-header-menu__link" href="/pricing">
                             <span>Pricing</span>
                           </a>
                         </li>
+
                         <li>
                           <a class="forensic-mobile-header-menu__link" href="/contact">
                             <span>Contact</span>
@@ -3549,12 +3759,14 @@
 
                     <div class="forensic-mobile-header-menu__theme">
                       <p>Theme</p>
+
                       <fieldset
                         class="tailwind theme-switcher-module__q-SprW__root"
                         data-small=""
                         data-theme-switcher="mobile-header"
                       >
                         <legend class="sr-only">Select a display theme:</legend>
+
                         <span style="height:100%">
                           <input
                             aria-label="system"
@@ -3679,11 +3891,16 @@
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset="0%" stop-color="transparent"></stop>
+
                 <stop offset="10%" stop-color="var(--status-border-base)"></stop>
+
                 <stop offset="50%" stop-color="var(--status-border-base)"></stop>
+
                 <stop offset="90%" stop-color="var(--status-border-base)"></stop>
+
                 <stop offset="100%" stop-color="transparent"></stop>
               </linearGradient>
+
               <radialGradient
                 id="sec522-top-border-flow-1"
                 cx="0"
@@ -3692,8 +3909,11 @@
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset="0" stop-color="var(--status-border-glow-1)"></stop>
+
                 <stop offset="0.22" stop-color="var(--status-border-glow-1)"></stop>
+
                 <stop offset="1" stop-color="var(--status-border-glow-1)" stop-opacity="0"></stop>
+
                 <animate
                   attributeName="cx"
                   dur="4.4s"
@@ -3701,6 +3921,7 @@
                   values="-180;80;340;620;940;1280;1620;1780"
                 >
                 </animate>
+
                 <animate
                   attributeName="r"
                   dur="4.4s"
@@ -3709,6 +3930,7 @@
                 >
                 </animate>
               </radialGradient>
+
               <radialGradient
                 id="sec522-top-border-flow-2"
                 cx="0"
@@ -3717,8 +3939,11 @@
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset="0" stop-color="var(--status-border-glow-2)"></stop>
+
                 <stop offset="0.18" stop-color="var(--status-border-glow-2)"></stop>
+
                 <stop offset="1" stop-color="var(--status-border-glow-2)" stop-opacity="0"></stop>
+
                 <animate
                   attributeName="cx"
                   dur="6.6s"
@@ -3726,6 +3951,7 @@
                   values="-260;40;260;560;900;1240;1580;1820"
                 >
                 </animate>
+
                 <animate
                   attributeName="r"
                   dur="6.6s"
@@ -3735,6 +3961,7 @@
                 </animate>
               </radialGradient>
             </defs>
+
             <path
               d="M0 1 H1600"
               fill="none"
@@ -3742,6 +3969,7 @@
               stroke-width="1"
             >
             </path>
+
             <path
               d="M0 1 H1600"
               fill="none"
@@ -3757,6 +3985,7 @@
               >
               </animate>
             </path>
+
             <path
               d="M0 1 H1600"
               fill="none"
@@ -3774,6 +4003,7 @@
             </path>
           </svg>
         </div>
+
         <div
           class="pointer-events-none absolute inset-x-0 -bottom-px z-40 h-[2px]"
           aria-hidden="true"
@@ -3789,11 +4019,16 @@
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset="0%" stop-color="transparent"></stop>
+
                 <stop offset="10%" stop-color="var(--status-border-base)"></stop>
+
                 <stop offset="50%" stop-color="var(--status-border-base)"></stop>
+
                 <stop offset="90%" stop-color="var(--status-border-base)"></stop>
+
                 <stop offset="100%" stop-color="transparent"></stop>
               </linearGradient>
+
               <radialGradient
                 id="sec522-bottom-border-flow-1"
                 cx="0"
@@ -3802,8 +4037,11 @@
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset="0" stop-color="var(--status-border-glow-1)"></stop>
+
                 <stop offset="0.22" stop-color="var(--status-border-glow-1)"></stop>
+
                 <stop offset="1" stop-color="var(--status-border-glow-1)" stop-opacity="0"></stop>
+
                 <animate
                   attributeName="cx"
                   dur="5.1s"
@@ -3811,6 +4049,7 @@
                   values="-220;60;300;580;860;1180;1500;1760"
                 >
                 </animate>
+
                 <animate
                   attributeName="r"
                   dur="5.1s"
@@ -3819,6 +4058,7 @@
                 >
                 </animate>
               </radialGradient>
+
               <radialGradient
                 id="sec522-bottom-border-flow-2"
                 cx="0"
@@ -3827,8 +4067,11 @@
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset="0" stop-color="var(--status-border-glow-2)"></stop>
+
                 <stop offset="0.18" stop-color="var(--status-border-glow-2)"></stop>
+
                 <stop offset="1" stop-color="var(--status-border-glow-2)" stop-opacity="0"></stop>
+
                 <animate
                   attributeName="cx"
                   dur="7.1s"
@@ -3836,6 +4079,7 @@
                   values="-300;20;220;500;820;1160;1500;1840"
                 >
                 </animate>
+
                 <animate
                   attributeName="r"
                   dur="7.1s"
@@ -3845,6 +4089,7 @@
                 </animate>
               </radialGradient>
             </defs>
+
             <path
               d="M0 1 H1600"
               fill="none"
@@ -3852,6 +4097,7 @@
               stroke-width="1"
             >
             </path>
+
             <path
               d="M0 1 H1600"
               fill="none"
@@ -3867,6 +4113,7 @@
               >
               </animate>
             </path>
+
             <path
               d="M0 1 H1600"
               fill="none"
@@ -3884,6 +4131,7 @@
             </path>
           </svg>
         </div>
+
         <div class="relative z-10 flex flex-col gap-2 px-6 w-full md:justify-center md:flex-row md:items-center">
           <div class="flex gap-2 items-center">
             <div id="sec522-status-icon" aria-hidden="true" class="shrink-0">
@@ -3900,11 +4148,13 @@
                   fill="currentColor"
                 >
                 </path>
+
                 <path
                   d="M14.5 4.5V5H13.5V4.5C13.5 3.94772 13.0523 3.5 12.5 3.5H12V3V2.5H12.5C13.0523 2.5 13.5 2.05228 13.5 1.5V1H14H14.5V1.5C14.5 2.05228 14.9477 2.5 15.5 2.5H16V3V3.5H15.5C14.9477 3.5 14.5 3.94772 14.5 4.5Z"
                   fill="currentColor"
                 >
                 </path>
+
                 <path
                   d="M8.40706 4.92939L8.5 4H9.5L9.59294 4.92939C9.82973 7.29734 11.7027 9.17027 14.0706 9.40706L15 9.5V10.5L14.0706 10.5929C11.7027 10.8297 9.82973 12.7027 9.59294 15.0706L9.5 16H8.5L8.40706 15.0706C8.17027 12.7027 6.29734 10.8297 3.92939 10.5929L3 10.5V9.5L3.92939 9.40706C6.29734 9.17027 8.40706 7.29734 8.40706 4.92939Z"
                   fill="currentColor"
@@ -3912,8 +4162,10 @@
                 </path>
               </svg>
             </div>
+
             <p id="sec522-status-title">Kauã Silbershlach Parodes</p>
           </div>
+
           <div id="sec522-status-right" class="ml-6 md:ml-0">
             <a
               id="sec522-status-link"
@@ -3980,6 +4232,7 @@
                     Menu
                   </span>
                 </div>
+
                 <div class="absolute right-0 top-0 h-full w-8 bg-linear-to-r from-transparent to-background-100 dark:to-background-200 pointer-events-none z-10">
                 </div>
               </div>
@@ -4041,7 +4294,6 @@
                     style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap; pointer-events: none;"
                   >
                   </button>
-
                   <li
                     class="relative first:mt-2 last:mb-2 flex w-full select-none flex-col items-center px-0"
                     data-nav-active="false"
@@ -4144,7 +4396,6 @@
                                     <span>All Utilities</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? || sidebar_nav_states["/all-utilities"].locked?
@@ -4193,7 +4444,6 @@
                                     <span>Password Tools</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? ||
@@ -4243,7 +4493,6 @@
                                     <span>System Tools</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? || sidebar_nav_states["/system-tools"].locked?
@@ -4292,7 +4541,6 @@
                                     <span>Browser Tools</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? || sidebar_nav_states["/browser-tools"].locked?
@@ -4341,7 +4589,6 @@
                                     <span>Programmer Tools</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? ||
@@ -4391,7 +4638,6 @@
                                     <span>Network Tools</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? || sidebar_nav_states["/network-tools"].locked?
@@ -4440,7 +4686,6 @@
                                     <span>Outlook/Office</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? ||
@@ -4490,7 +4735,6 @@
                                     <span>64-bit Download</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? ||
@@ -4540,7 +4784,6 @@
                                     <span>Panel</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={sidebar_guest? || sidebar_nav_states["/panel"].locked?}
                                   class="ml-2 shrink-0 text-[var(--ds-gray-600)]"
@@ -4582,33 +4825,39 @@
                                           stroke-linecap="square"
                                         >
                                         </path>
+
                                         <path
                                           d="M11.25 15.25H13.25C14.3546 15.25 15.25 14.3546 15.25 13.25V11.25"
                                           stroke-linecap="square"
                                         >
                                         </path>
+
                                         <path
                                           d="M11.25 0.75H13.25C14.3546 0.75 15.25 1.64543 15.25 2.75V4.75"
                                           stroke-linecap="square"
                                         >
                                         </path>
+
                                         <path
                                           d="M4.75 15.25H2.75C1.64543 15.25 0.75 14.3546 0.75 13.25V11.25"
                                           stroke-linecap="square"
                                         >
                                         </path>
+
                                         <path
                                           d="M4.5 5H9.5"
                                           stroke-linecap="round"
                                           stroke-linejoin="round"
                                         >
                                         </path>
+
                                         <path
                                           d="M7.5 8L12.5 8"
                                           stroke-linecap="round"
                                           stroke-linejoin="round"
                                         >
                                         </path>
+
                                         <path
                                           d="M4.5 11H9.5"
                                           stroke-linecap="round"
@@ -4620,7 +4869,6 @@
                                     <span>Forensics</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={sidebar_guest? || sidebar_nav_states["/forensics"].locked?}
                                   class="ml-2 shrink-0 text-[var(--ds-gray-600)]"
@@ -4667,7 +4915,6 @@
                                     <span>Pre-Release Tools</span>
                                   </span>
                                 </span>
-
                                 <PortfolioLiveWeb.CoreComponents.lock_icon
                                   :if={
                                     sidebar_guest? ||
@@ -4683,15 +4930,16 @@
                     </div>
                   </li>
                 </div>
+
                 <div id="content-2" class="sdk-switch-panel" hidden="" data-state="inactive">
                 </div>
+
                 <div id="content-3" class="sdk-switch-panel" hidden="" data-state="inactive">
                 </div>
               </nav>
             </aside>
-            <div id="docs-main-content" class="forensic-content-column">
-              {@inner_content}
-            </div>
+
+            <div id="docs-main-content" class="forensic-content-column">{@inner_content}</div>
 
             <aside
               id="right-sidebar"
@@ -4701,6 +4949,7 @@
               <div class="">
                 <span class="block text-sm font-medium text-gray-1000">On this page</span>
                 <div id="toc-container" phx-hook="TableOfContentsHook" phx-update="ignore"></div>
+
                 <div
                   id="aside-buttons"
                   class="pt-5 mt-3 space-y-3 border-t border-gray-300 opacity-0"
@@ -4734,8 +4983,10 @@
                         >
                         </path>
                       </svg>
-                    </span><span class="truncate inline-block px-1.5">Copy as Markdown</span>
-                  </button><button
+                    </span>
+                    <span class="truncate inline-block px-1.5">Copy as Markdown</span>
+                  </button>
+                  <button
                     type="submit"
                     tabindex="0"
                     data-react-aria-pressable="true"
@@ -4745,19 +4996,28 @@
                     data-suffix="false"
                     data-version="v1"
                     style="--geist-icon-size: 16px;"
-                  ><span class="mr-0.5 min-w-5 shrink-0 flex items-center justify-center"><svg
-                    data-testid="geist-icon"
-                    height="16"
-                    stroke-linejoin="round"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    style="color: currentcolor;"
-                  ><path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M1.53035 12.7804L1.00002 13.3108L-0.0606384 12.2501L0.469692 11.7198L4.18936 8.00011L0.469692 4.28044L-0.0606384 3.75011L1.00002 2.68945L1.53035 3.21978L5.60358 7.29301C5.9941 7.68353 5.9941 8.3167 5.60357 8.70722L1.53035 12.7804ZM8.75002 12.5001H8.00002V14.0001H8.75002H15.25H16V12.5001H15.25H8.75002Z"
-                    fill="currentColor"
-                  ></path></svg></span><span class="truncate inline-block px-1.5">Install Vercel Plugin</span></button><button
+                  >
+                    <span class="mr-0.5 min-w-5 shrink-0 flex items-center justify-center">
+                      <svg
+                        data-testid="geist-icon"
+                        height="16"
+                        stroke-linejoin="round"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        style="color: currentcolor;"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.53035 12.7804L1.00002 13.3108L-0.0606384 12.2501L0.469692 11.7198L4.18936 8.00011L0.469692 4.28044L-0.0606384 3.75011L1.00002 2.68945L1.53035 3.21978L5.60358 7.29301C5.9941 7.68353 5.9941 8.3167 5.60357 8.70722L1.53035 12.7804ZM8.75002 12.5001H8.00002V14.0001H8.75002H15.25H16V12.5001H15.25H8.75002Z"
+                          fill="currentColor"
+                        >
+                        </path>
+                      </svg>
+                    </span>
+                    <span class="truncate inline-block px-1.5">Install Vercel Plugin</span>
+                  </button>
+                  <button
                     type="submit"
                     tabindex="0"
                     data-react-aria-pressable="true"
@@ -4784,7 +5044,6 @@
                     d="M6.89531 2.23972C6.72984 2.12153 6.5 2.23981 6.5 2.44315V5.25001C6.5 6.21651 5.7165 7.00001 4.75 7.00001H2.5V13.5H12.1884C12.762 13.5 13.262 13.1096 13.4011 12.5532L14.4011 8.55318C14.5984 7.76425 14.0017 7.00001 13.1884 7.00001H9.25H8.5V6.25001V3.51458C8.5 3.43384 8.46101 3.35807 8.39531 3.31114L6.89531 2.23972ZM5 2.44315C5 1.01975 6.6089 0.191779 7.76717 1.01912L9.26717 2.09054C9.72706 2.41904 10 2.94941 10 3.51458V5.50001H13.1884C14.9775 5.50001 16.2903 7.18133 15.8563 8.91698L14.8563 12.917C14.5503 14.1412 13.4503 15 12.1884 15H1.75H1V14.25V6.25001V5.50001H1.75H4.75C4.88807 5.50001 5 5.38808 5 5.25001V2.44315Z"
                     fill="currentColor"
                   ></path></svg></span><span class="truncate inline-block px-1.5">Give feedback</span></button>
-
                   <button
                     id="ask-ai-about-page-btn"
                     type="button"
@@ -4815,7 +5074,8 @@
                         >
                         </path>
                       </svg>
-                    </span><span class="truncate inline-block px-1.5">Ask AI about this page</span>
+                    </span>
+                    <span class="truncate inline-block px-1.5">Ask AI about this page</span>
                   </button>
                 </div>
               </div>
@@ -4903,6 +5163,7 @@
                     src="/vc-ap-vercel-marketing/_next/static/media/sonos-dark.29-t4khyvochw.svg?dpl=dpl_79DNg6VnALujhdEgxMuoVAmwELLB"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="OpenSea"
@@ -4928,6 +5189,7 @@
                     src="/vc-ap-vercel-marketing/_next/static/media/open-sea-dark.0nt0y2o9qglu0.svg?dpl=dpl_79DNg6VnALujhdEgxMuoVAmwELLB"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="HellyHansenLogomark"
@@ -4953,6 +5215,7 @@
                     src="/vc-ap-vercel-marketing/_next/static/media/helly-hansen-logomark-dark.1_lnwjxneavcm.svg?dpl=dpl_79DNg6VnALujhdEgxMuoVAmwELLB"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="TheWeatherCompany"
@@ -4978,6 +5241,7 @@
                     src="/vc-ap-vercel-marketing/_next/static/media/the-weather-company-dark.1ti4cyoyu2gro.svg?dpl=dpl_79DNg6VnALujhdEgxMuoVAmwELLB"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="GitBook"
@@ -5004,6 +5268,7 @@
                   />
                 </li>
               </ul>
+
               <ul aria-hidden="true" class="customer-carousel-module__pFnISG__slides">
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
@@ -5030,6 +5295,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="OpenSea"
@@ -5055,6 +5321,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="HellyHansenLogomark"
@@ -5080,6 +5347,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="TheWeatherCompany"
@@ -5105,6 +5373,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="GitBook"
@@ -5131,6 +5400,7 @@
                   />
                 </li>
               </ul>
+
               <ul aria-hidden="true" class="customer-carousel-module__pFnISG__slides">
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
@@ -5157,6 +5427,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="OpenSea"
@@ -5182,6 +5453,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="HellyHansenLogomark"
@@ -5207,6 +5479,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="TheWeatherCompany"
@@ -5232,6 +5505,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="GitBook"
@@ -5258,6 +5532,7 @@
                   />
                 </li>
               </ul>
+
               <ul aria-hidden="true" class="customer-carousel-module__pFnISG__slides">
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
@@ -5284,6 +5559,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="OpenSea"
@@ -5309,6 +5585,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="HellyHansenLogomark"
@@ -5334,6 +5611,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="TheWeatherCompany"
@@ -5359,6 +5637,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="GitBook"
@@ -5385,6 +5664,7 @@
                   />
                 </li>
               </ul>
+
               <ul aria-hidden="true" class="customer-carousel-module__pFnISG__slides">
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
@@ -5411,6 +5691,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="OpenSea"
@@ -5436,6 +5717,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="HellyHansenLogomark"
@@ -5461,6 +5743,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="TheWeatherCompany"
@@ -5486,6 +5769,7 @@
                     style="color: transparent;"
                   />
                 </li>
+
                 <li class="flex flex-col items-center justify-center flex-initial w-fit">
                   <img
                     alt="GitBook"
@@ -5521,6 +5805,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Get Started
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -5532,6 +5817,7 @@
                   The Intelligence Cycle
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/intelligence-cycle"
@@ -5542,6 +5828,7 @@
                   Intelligence Writing
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/intelligence-cycle"
@@ -5559,6 +5846,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Investigate
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -5570,6 +5858,7 @@
                   Search Graph
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/dark-web-search"
@@ -5580,6 +5869,7 @@
                   Dark Web Search
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/identity-search"
@@ -5590,6 +5880,7 @@
                   Identity Search
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/domain-intel"
@@ -5600,6 +5891,7 @@
                   Domain Intel
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/actor-profiles"
@@ -5610,6 +5902,7 @@
                   Actor Profiles
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/breach-search"
@@ -5620,6 +5913,7 @@
                   Breach Search
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/ioc-search"
@@ -5630,6 +5924,7 @@
                   IOC Search
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/malware-search"
@@ -5640,6 +5935,7 @@
                   Malware Search
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/attack-map"
@@ -5650,6 +5946,7 @@
                   ATT&amp;CK Map
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/link-analysis"
@@ -5660,6 +5957,7 @@
                   Link Analysis
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/cases"
@@ -5677,6 +5975,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Monitor
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -5688,6 +5987,7 @@
                   Leak Alerts
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/breach-alerts"
@@ -5698,6 +5998,7 @@
                   Breach Alerts
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/credential-watch"
@@ -5708,6 +6009,7 @@
                   Credential Watch
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/telegram-watch"
@@ -5718,6 +6020,7 @@
                   Telegram Watch
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/brand-watch"
@@ -5728,6 +6031,7 @@
                   Brand Watch
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/attack-surface"
@@ -5738,6 +6042,7 @@
                   Attack Surface
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/domain-watch"
@@ -5748,6 +6053,7 @@
                   Domain Watch
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/typosquatting"
@@ -5758,6 +6064,7 @@
                   Typosquatting
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/third-party-risk"
@@ -5768,6 +6075,7 @@
                   Third-Party Risk
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/threat-feeds"
@@ -5778,6 +6086,7 @@
                   Threat Feeds
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/exec-protection"
@@ -5795,6 +6104,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Platform
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -5806,6 +6116,7 @@
                   Takedowns
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/ioc-exports"
@@ -5816,6 +6127,7 @@
                   IOC Exports
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/evidence-vault"
@@ -5826,6 +6138,7 @@
                   Evidence Vault
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/cases"
@@ -5836,6 +6149,7 @@
                   Cases
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/workflows"
@@ -5846,6 +6160,7 @@
                   Workflows
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/alert-routing"
@@ -5856,6 +6171,7 @@
                   Alert Routing
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/api"
@@ -5866,6 +6182,7 @@
                   API Access
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/stix-taxii"
@@ -5876,6 +6193,7 @@
                   STIX/TAXII
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/risk-scoring"
@@ -5886,6 +6204,7 @@
                   Risk Scoring
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/data-ingest"
@@ -5896,6 +6215,7 @@
                   Data Ingest
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/integrations"
@@ -5913,6 +6233,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Resources
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -5924,6 +6245,7 @@
                   Pricing
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/customers"
@@ -5934,6 +6256,7 @@
                   Customers
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/enterprise"
@@ -5944,6 +6267,7 @@
                   Enterprise
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/reports"
@@ -5954,6 +6278,7 @@
                   Reports
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/webinars"
@@ -5964,6 +6289,7 @@
                   Webinars
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/papers"
@@ -5974,6 +6300,7 @@
                   Papers
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/briefs"
@@ -5984,6 +6311,7 @@
                   Briefs
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/blog"
@@ -5994,6 +6322,7 @@
                   Blog
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/docs"
@@ -6004,6 +6333,7 @@
                   Docs
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/glossary"
@@ -6014,6 +6344,7 @@
                   Glossary
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/partners"
@@ -6031,6 +6362,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Learn
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -6042,6 +6374,7 @@
                   Academy
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/collection"
@@ -6052,6 +6385,7 @@
                   Collection
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/source-review"
@@ -6073,6 +6407,7 @@
                   Diamond Model
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/analysis"
@@ -6083,6 +6418,7 @@
                   Analysis
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/production"
@@ -6093,6 +6429,7 @@
                   Production
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/intel-writing"
@@ -6103,6 +6440,7 @@
                   Intel Writing
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/tradecraft"
@@ -6113,6 +6451,7 @@
                   Tradecraft
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/playbooks"
@@ -6130,6 +6469,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Coverage
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -6141,6 +6481,7 @@
                   Stealer Logs
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/darknet-markets"
@@ -6151,6 +6492,7 @@
                   Darknet Markets
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/threat-actors"
@@ -6161,6 +6503,7 @@
                   Threat Actors
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/ransomware-gangs"
@@ -6171,6 +6514,7 @@
                   Ransomware Gangs
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/telegram"
@@ -6181,6 +6525,7 @@
                   Telegram
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/discord"
@@ -6191,6 +6536,7 @@
                   Discord
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/forums"
@@ -6201,6 +6547,7 @@
                   Forums
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/marketplaces"
@@ -6211,6 +6558,7 @@
                   Marketplaces
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/domains-dns"
@@ -6221,6 +6569,7 @@
                   Domains &amp; DNS
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/paste-sites"
@@ -6231,6 +6580,7 @@
                   Paste Sites
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/coverage/data-breaches"
@@ -6248,6 +6598,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Website Security
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -6260,6 +6611,7 @@
                   Input Validation
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#xss"
@@ -6271,6 +6623,7 @@
                   XSS
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#sql-injection"
@@ -6282,6 +6635,7 @@
                   SQL Injection
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#csrf"
@@ -6293,6 +6647,7 @@
                   CSRF
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#http-parameter-pollution"
@@ -6304,6 +6659,7 @@
                   HPP
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#file-uploads"
@@ -6315,6 +6671,7 @@
                   File Uploads
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#directory-traversal"
@@ -6326,6 +6683,7 @@
                   Traversal
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#api-security"
@@ -6337,6 +6695,7 @@
                   API Security
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#session-security"
@@ -6348,6 +6707,7 @@
                   Session Security
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#access-control"
@@ -6359,6 +6719,7 @@
                   Access Control
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="#output-encoding"
@@ -6377,6 +6738,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Use Cases
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -6388,6 +6750,7 @@
                   Threat Intelligence
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/dark-web-intel"
@@ -6398,6 +6761,7 @@
                   Dark Web Intel
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/leak-detection"
@@ -6408,6 +6772,7 @@
                   Leak Detection
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/breach-monitoring"
@@ -6418,6 +6783,7 @@
                   Breach Monitoring
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/credential-leaks"
@@ -6428,6 +6794,7 @@
                   Credential Leaks
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/brand-monitoring"
@@ -6438,6 +6805,7 @@
                   Brand Monitoring
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/typosquatting"
@@ -6448,6 +6816,7 @@
                   Typosquatting
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/third-party-risk"
@@ -6458,6 +6827,7 @@
                   Third-Party Risk
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/attack-surface"
@@ -6468,6 +6838,7 @@
                   Attack Surface
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/phishing-defense"
@@ -6478,6 +6849,7 @@
                   Phishing Defense
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/use-cases/ioc-enrichment"
@@ -6495,6 +6867,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Company
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -6532,6 +6905,7 @@
                   About
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/careers"
@@ -6541,6 +6915,7 @@
                   Careers
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/help"
@@ -6551,6 +6926,7 @@
                   Help
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/press"
@@ -6561,6 +6937,7 @@
                   Press
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/legal"
@@ -6570,6 +6947,7 @@
                   Legal
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/privacy"
@@ -6579,6 +6957,7 @@
                   Privacy Policy
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/contact"
@@ -6588,6 +6967,7 @@
                   Contact
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/partners"
@@ -6597,6 +6977,7 @@
                   Partners
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/security-center"
@@ -6613,6 +6994,7 @@
             <h2 class="font-mono uppercase text-[12px] leading-none font-medium my-[var(--geist-gap-half)]">
               Community
             </h2>
+
             <ul class="list-none m-0 p-0">
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
@@ -6624,6 +7006,7 @@
                   Research Program
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/events"
@@ -6634,6 +7017,7 @@
                   Events
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/customer-stories"
@@ -6644,6 +7028,7 @@
                   Customer Stories
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/forum"
@@ -6654,6 +7039,7 @@
                   Forum
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/newsletter"
@@ -6664,6 +7050,7 @@
                   Newsletter
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="/release-notes"
@@ -6702,6 +7089,7 @@
                   GitHub
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="https://linkedin.com/in/kauasilbershlachparodes"
@@ -6729,6 +7117,7 @@
                   LinkedIn
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="https://instagram.com/kaua.s.parodes"
@@ -6756,6 +7145,7 @@
                   Instagram
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="https://youtube.com/@kauasilbershlachparodes"
@@ -6783,6 +7173,7 @@
                   YouTube
                 </a>
               </li>
+
               <li class="text-gray-900 py-1 leading-5 focus-visible:rounded-sm focus-visible:outline-none focus-visible:shadow-[var(--ds-focus-ring)]">
                 <a
                   href="https://discord.gg/"
@@ -6842,6 +7233,7 @@
                 </svg>
               </a>
             </div>
+
             <div class="footer-module__rV1DKq__newsletter"></div>
           </div>
         </div>
@@ -6904,7 +7296,6 @@
                 </svg>
               </label>
             </span>
-
             <span style="height:100%">
               <input
                 aria-checked="false"
@@ -6935,7 +7326,6 @@
                 </svg>
               </label>
             </span>
-
             <span style="height:100%">
               <input
                 aria-checked="false"

@@ -6,16 +6,13 @@
   Home: @prev_page is nil → Previous rendered invisible (opacity-0 pointer-events-none) to maintain layout
   Last page: @next_page is nil → Next not rendered
 --%>
-
 <hr class="border-top-[1px] my-12 border-0 border-solid border-[var(--accents-2)] sm:my-9" />
-
 <% prev_allowed? =
   @prev_page &&
     PortfolioLiveWeb.Sidebar.SidebarAccessControl.allowed_route?(assigns, @prev_page.path) %>
 <% next_allowed? =
   @next_page &&
     PortfolioLiveWeb.Sidebar.SidebarAccessControl.allowed_route?(assigns, @next_page.path) %>
-
 <div class="prev-next-nav-module__P3AUTG__container">
   <%!-- PREVIOUS --%>
   <%= if prev_allowed? do %>
@@ -44,8 +41,10 @@
           </path>
         </svg>
       </div>
+
       <div class="prev-next-nav-module__P3AUTG__previous">
         <div class="prev-next-nav-module__P3AUTG__label">Previous</div>
+
         <div class="prev-next-nav-module__P3AUTG__title">{@prev_page.title}</div>
       </div>
     </a>
@@ -66,15 +65,16 @@
           </path>
         </svg>
       </div>
+
       <div class="prev-next-nav-module__P3AUTG__previous">
         <div class="prev-next-nav-module__P3AUTG__label">Previous</div>
+
         <div class="prev-next-nav-module__P3AUTG__title">–</div>
       </div>
     </div>
   <% end %>
 
   <div class="prev-next-nav-module__P3AUTG__separator"></div>
-
   <%!-- NEXT --%>
   <%= if next_allowed? do %>
     <a
@@ -85,8 +85,10 @@
     >
       <div class="prev-next-nav-module__P3AUTG__next">
         <div class="prev-next-nav-module__P3AUTG__label">Next</div>
+
         <div class="prev-next-nav-module__P3AUTG__title">{@next_page.title}</div>
       </div>
+
       <div class="prev-next-nav-module__P3AUTG__navIcon">
         <svg
           class="prev-next-nav-module__P3AUTG__icon"

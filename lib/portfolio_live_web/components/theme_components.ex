@@ -24,11 +24,9 @@ defmodule PortfolioLiveWeb.Components.ThemeComponents do
         <input type="radio" name="theme_mode" value="light" checked={@current_mode == "light"} />
         Light
       </label>
-
       <label>
         <input type="radio" name="theme_mode" value="dark" checked={@current_mode == "dark"} /> Dark
       </label>
-
       <label>
         <input type="radio" name="theme_mode" value="system" checked={@current_mode == "system"} />
         System
