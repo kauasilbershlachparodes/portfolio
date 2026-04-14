@@ -1,0 +1,281 @@
+/* PORTFOLIO_DO_KAUÃ_SILBERSHLACH_PARODES_SITE_OFICIAL*/ 
+:root {
+  --invict-login-page-bg: var(--ds-background-200, #f3f3f5);
+  --invict-login-card-bg: var(--ds-background-100, #ffffff);
+  --invict-login-card-radius: 10px;
+  --invict-login-card-width: 360px;
+  --invict-login-brand-gap: 40px;
+  --invict-login-accent: var(--ds-purple-700, #7f2b90);
+  --invict-login-accent-hover: var(--ds-purple-800, #6f247f);
+  --invict-login-text: var(--ds-gray-1000, #171717);
+  --invict-login-muted: var(--ds-gray-900, #666666);
+  --invict-login-border: var(--ds-gray-400, #dcdcdc);
+  --invict-login-link: var(--geist-link-color, #5b4fe9);
+  --invict-login-shadow: var(--ds-shadow-border-small, 0 0 0 1px rgba(0,0,0,.08), 0 2px 2px rgba(0,0,0,.04));
+  --invict-login-focus: var(--ds-focus-ring, 0 0 0 2px #fff, 0 0 0 4px #0070f3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans, var(--font-sans-fallback, Inter, Arial, sans-serif));
+  background: var(--invict-login-page-bg);
+  color: var(--invict-login-text);
+}
+
+.invict-login-page {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: var(--invict-login-page-bg);
+}
+
+.invict-login-shell {
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 48px 24px 24px;
+}
+
+.invict-login-brand {
+  display: grid;
+  justify-items: center;
+  margin-bottom: var(--invict-login-brand-gap);
+}
+
+.invict-login-brand-link {
+  color: inherit;
+  text-decoration: none;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.invict-login-brand-wordmark {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 6px;
+  line-height: 1;
+}
+
+.invict-login-brand-wordmark strong {
+  font-size: clamp(26px, 3.2vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.invict-login-brand-wordmark small {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--invict-login-muted);
+  margin-bottom: 2px;
+}
+
+.invict-login-brand-tagline {
+  font-size: 14px;
+  color: var(--invict-login-muted);
+  line-height: 1.3;
+}
+
+.invict-login-card {
+  width: min(100%, var(--invict-login-card-width));
+  background: var(--invict-login-card-bg);
+  border-radius: var(--invict-login-card-radius);
+  box-shadow: var(--invict-login-shadow);
+}
+
+.invict-login-card-inner {
+  padding: 28px 30px 30px;
+}
+
+.invict-login-title {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.invict-login-description {
+  margin: 12px 0 28px;
+  max-width: 280px;
+  color: var(--invict-login-muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.invict-login-form {
+  display: grid;
+  gap: 18px;
+}
+
+.invict-login-field {
+  display: grid;
+  gap: 8px;
+}
+
+.invict-login-label {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--invict-login-text);
+}
+
+.invict-login-input {
+  width: 100%;
+  height: var(--geist-form-small-height, 32px);
+  padding: 0 12px;
+  border: 1px solid var(--invict-login-border);
+  border-radius: 6px;
+  background: var(--ds-background-100, #fff);
+  color: var(--invict-login-text);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.invict-login-input::placeholder {
+  color: var(--invict-login-muted);
+}
+
+.invict-login-input:focus {
+  border-color: var(--ds-blue-900, #0a72ef);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ds-blue-900, #0a72ef) 18%, transparent);
+}
+
+.invict-login-field.is-invalid .invict-login-input {
+  border-color: var(--ds-red-700, #e5484d);
+}
+
+.invict-login-error {
+  margin: -2px 0 0;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--ds-red-700, #e5484d);
+}
+
+.invict-login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: -2px;
+}
+
+.invict-login-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--invict-login-muted);
+  font-size: 14px;
+  line-height: 1.35;
+  cursor: pointer;
+  user-select: none;
+}
+
+.invict-login-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--invict-login-accent);
+  flex: 0 0 16px;
+}
+
+.invict-login-forgot {
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--invict-login-link);
+}
+
+.invict-login-submit.button-module__QyrFCa__button[data-geist-button] {
+  width: 100%;
+  margin-top: 12px;
+  --themed-bg: var(--invict-login-accent);
+  --themed-fg: var(--ds-background-100, #ffffff);
+  --themed-border: transparent;
+  box-shadow: none;
+}
+
+.invict-login-submit.button-module__QyrFCa__button[data-geist-button]:hover {
+  background: var(--invict-login-accent-hover);
+}
+
+.invict-login-submit.button-module__QyrFCa__button[data-geist-button]:focus-visible,
+.invict-login-brand-link:focus-visible,
+.invict-login-check:has(input:focus-visible) {
+  outline: none;
+  box-shadow: var(--invict-login-focus);
+}
+
+.invict-login-submit.is-loading {
+  pointer-events: none;
+  opacity: 0.88;
+}
+
+.invict-login-submit.is-loading .button-module__QyrFCa__content::after {
+  content: "...";
+}
+
+.invict-login-footer {
+  padding: 12px 24px 32px;
+}
+
+.invict-login-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+}
+
+.invict-login-footer-links a {
+  color: var(--invict-login-link);
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .invict-login-shell {
+    padding: 28px 16px 20px;
+  }
+
+  .invict-login-brand {
+    margin-bottom: 28px;
+  }
+
+  .invict-login-card-inner {
+    padding: 24px 18px 22px;
+  }
+
+  .invict-login-title {
+    font-size: 26px;
+  }
+
+  .invict-login-description {
+    margin-bottom: 24px;
+  }
+
+  .invict-login-options {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .invict-login-footer {
+    padding: 8px 16px 24px;
+  }
+
+  .invict-login-footer-links {
+    gap: 12px 20px;
+  }
+}
