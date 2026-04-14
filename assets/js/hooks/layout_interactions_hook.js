@@ -133,6 +133,22 @@ function mergeSpaceSeparatedTokens() {
   return tokens.join(' ');
 }
 
+function setImportantStyle(element, property, value) {
+  if (!(element instanceof HTMLElement)) {
+    return;
+  }
+
+  element.style.setProperty(property, value, 'important');
+}
+
+function clearInlineStyle(element, property) {
+  if (!(element instanceof HTMLElement)) {
+    return;
+  }
+
+  element.style.removeProperty(property);
+}
+
 var SAFE_NAVIGATION_PROTOCOLS = Object.freeze(['http:', 'https:', 'mailto:', 'tel:']);
 var SANITIZED_URL_ATTRIBUTES = Object.freeze(['href', 'src', 'xlink:href', 'action', 'formaction', 'poster']);
 var SANITIZED_REMOVED_ELEMENT_SELECTOR = 'script, iframe, object, embed, frame, frameset, meta[http-equiv="refresh"]';
@@ -235,6 +251,7 @@ var MOBILE_DOCS_NAV_OPEN_CLASS = 'docs-mobile-nav-open'
 var MOBILE_DOCS_NAV_BREAKPOINT = 1024
 var HEADER_NAV_DESKTOP_BREAKPOINT = 1150
 var HEADER_MOBILE_MENU_OPEN_CLASS = 'header-mobile-menu-open'
+var COLLAPSED_SIDEBAR_WIDTH = 'var(--forensic-sidebar-collapsed-width, 10px)'
 
 function getViewportWidth() {
   return parseInteger(globalScope.innerWidth, 0)
@@ -244,6 +261,8 @@ var isDesktopHeaderNavViewport = () => getViewportWidth() >= HEADER_NAV_DESKTOP_
 
 
 var isMobileDocsViewport = () => getViewportWidth() < MOBILE_DOCS_NAV_BREAKPOINT
+
+var getAskAiPanelEdgeGap = () => isMobileDocsViewport() ? '0px' : COLLAPSED_SIDEBAR_WIDTH
 
 var syncMobileDocsNavTriggerState = () => {
   var isOpen = document.body.classList.contains(MOBILE_DOCS_NAV_OPEN_CLASS)
@@ -628,55 +647,170 @@ var scheduleHeaderNavClose = () => {
 }
 
 var ensureAskAiLayoutStyle = () => {
-  if (document.getElementById('ask-ai-layout-style')) return
+  var style = document.getElementById('ask-ai-layout-style')
+  if (!(style instanceof HTMLStyleElement)) {
+    style = document.createElement('style')
+    style.id = 'ask-ai-layout-style'
+    document.head.appendChild(style)
+  }
 
-  var style = document.createElement('style')
-  style.id = 'ask-ai-layout-style'
   style.textContent = `
-    body.ask-ai-panel-open #forensic-main-nav {
-      display: none !important;
+    body.ask-ai-panel-open {
+      --ask-ai-panel-width: min(420px, calc(100vw - 32px));
+      --ask-ai-panel-edge-gap: ${COLLAPSED_SIDEBAR_WIDTH};
     }
 
-    body.ask-ai-panel-open #header-wrapper {
-      padding-right: 400px !important;
-    }
-
-    body.ask-ai-panel-open #forensic-header-actions {
-      margin-left: auto !important;
-      padding-right: 0 !important;
-    }
-
-    body.ask-ai-panel-open #docs-main-content {
-      flex: 1 1 auto !important;
-      min-width: 0 !important;
-      width: calc(100% - 400px) !important;
-      max-width: calc(100% - 400px) !important;
-      padding-right: 259px !important;
-      box-sizing: border-box !important;
-    }
-
-    #right-sidebar[data-right-sidebar-mode="ask-ai"] {
-      position: fixed !important;
-      top: 0 !important;
-      right: 0 !important;
-      z-index: 4000 !important;
-      width: 400px !important;
-      min-width: 400px !important;
-      height: 100vh !important;
-      max-height: 100vh !important;
-      margin: 0 !important;
+    body.ask-ai-panel-open #right-sidebar[data-right-sidebar-mode="ask-ai"] {
       overflow: hidden !important;
-      display: block !important;
+      box-sizing: border-box !important;
+      background: var(--ds-background-100) !important;
+      z-index: 6001 !important;
     }
 
-    #right-sidebar[data-right-sidebar-mode="ask-ai"] [data-ai-chat-panel-root] {
+    @media (min-width: 1024px) {
+      body.ask-ai-panel-open .header-module__6nzVrW__wrapper {
+        padding-right: var(--ask-ai-panel-width) !important;
+        box-sizing: border-box !important;
+      }
+
+      body.ask-ai-panel-open .header-module__6nzVrW__header {
+        justify-content: flex-start !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      body.ask-ai-panel-open .header-module__6nzVrW__main,
+      body.ask-ai-panel-open #forensic-main-nav {
+        display: none !important;
+      }
+
+      body.ask-ai-panel-open .header-module__6nzVrW__left {
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+      }
+
+      body.ask-ai-panel-open .forensic-main-wrapper {
+        padding-right: calc(var(--forensic-wrapper-inline-padding) + var(--ask-ai-panel-width)) !important;
+        box-sizing: border-box !important;
+      }
+
+      body.ask-ai-panel-open #docs-main-content {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+      }
+
+      body.ask-ai-panel-open #forensic-header-actions {
+        flex: 0 1 auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        min-width: 0 !important;
+      }
+
+      body.ask-ai-panel-open #forensic-header-actions > div {
+        justify-content: flex-end !important;
+      }
+
+      body.ask-ai-panel-open #forensic-header-actions .lg\\:justify-end {
+        justify-content: flex-end !important;
+      }
+
+      body.ask-ai-panel-open #right-sidebar[data-right-sidebar-mode="ask-ai"] {
+        position: fixed !important;
+        inset: 0 0 0 auto !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        display: block !important;
+        width: calc(var(--ask-ai-panel-width) - var(--ask-ai-panel-edge-gap)) !important;
+        min-width: calc(var(--ask-ai-panel-width) - var(--ask-ai-panel-edge-gap)) !important;
+        height: 100vh !important;
+        margin-right: var(--ask-ai-panel-edge-gap) !important;
+        margin-top: 0 !important;
+        border-left: 1px solid var(--ds-gray-alpha-400) !important;
+        box-shadow: -20px 0 48px rgba(15, 23, 42, 0.12) !important;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      body.ask-ai-panel-open #right-sidebar[data-right-sidebar-mode="ask-ai"] {
+        position: fixed !important;
+        top: calc(var(--header-height) + 55px) !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        display: block !important;
+        width: 100vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        margin-right: 0 !important;
+        border-left: 0 !important;
+        box-shadow: none !important;
+      }
+    }
+
+    body.ask-ai-panel-open #right-sidebar[data-right-sidebar-mode="ask-ai"] [data-ai-chat-panel-root] {
       display: block !important;
-      width: 400px !important;
-      height: 100vh !important;
+      width: 100% !important;
+      height: 100% !important;
     }
   `
+}
 
-  document.head.appendChild(style)
+var syncAskAiHeaderLayout = (isOpen) => {
+  var wrapper = document.querySelector('.header-module__6nzVrW__wrapper');
+  var header = document.querySelector('.header-module__6nzVrW__header');
+  var headerMain = document.querySelector('.header-module__6nzVrW__main');
+  var headerNav = document.getElementById('forensic-main-nav');
+  var headerLeft = document.querySelector('.header-module__6nzVrW__left');
+  var headerActions = document.getElementById('forensic-header-actions');
+  var headerActionsRow = headerActions && headerActions.firstElementChild instanceof HTMLElement
+    ? headerActions.firstElementChild
+    : null;
+  var headerActionsGroup = headerActionsRow
+    ? headerActionsRow.querySelector('.relative')
+    : null;
+  var mainWrapper = document.querySelector('.forensic-main-wrapper');
+
+  if (isOpen) {
+    setImportantStyle(wrapper, 'padding-right', 'var(--ask-ai-panel-width)');
+    setImportantStyle(wrapper, 'box-sizing', 'border-box');
+    setImportantStyle(header, 'justify-content', 'flex-start');
+    setImportantStyle(header, 'max-width', '100%');
+    setImportantStyle(header, 'box-sizing', 'border-box');
+    setImportantStyle(headerMain, 'display', 'none');
+    setImportantStyle(headerNav, 'display', 'none');
+    setImportantStyle(headerLeft, 'flex', '0 0 auto');
+    setImportantStyle(headerLeft, 'min-width', '0');
+    setImportantStyle(headerActions, 'flex', '0 1 auto');
+    setImportantStyle(headerActions, 'margin-left', 'auto');
+    setImportantStyle(headerActions, 'margin-right', '0');
+    setImportantStyle(headerActions, 'min-width', '0');
+    setImportantStyle(headerActionsRow, 'justify-content', 'flex-end');
+    setImportantStyle(headerActionsGroup, 'justify-content', 'flex-end');
+    setImportantStyle(mainWrapper, 'padding-right', 'calc(var(--forensic-wrapper-inline-padding) + var(--ask-ai-panel-width))');
+    setImportantStyle(mainWrapper, 'box-sizing', 'border-box');
+    return;
+  }
+
+  clearInlineStyle(wrapper, 'padding-right');
+  clearInlineStyle(wrapper, 'box-sizing');
+  clearInlineStyle(header, 'justify-content');
+  clearInlineStyle(header, 'max-width');
+  clearInlineStyle(header, 'box-sizing');
+  clearInlineStyle(headerMain, 'display');
+  clearInlineStyle(headerNav, 'display');
+  clearInlineStyle(headerLeft, 'flex');
+  clearInlineStyle(headerLeft, 'min-width');
+  clearInlineStyle(headerActions, 'flex');
+  clearInlineStyle(headerActions, 'margin-left');
+  clearInlineStyle(headerActions, 'margin-right');
+  clearInlineStyle(headerActions, 'min-width');
+  clearInlineStyle(headerActionsRow, 'justify-content');
+  clearInlineStyle(headerActionsGroup, 'justify-content');
+  clearInlineStyle(mainWrapper, 'padding-right');
+  clearInlineStyle(mainWrapper, 'box-sizing');
 }
 
 
@@ -713,8 +847,8 @@ var getAskAiPageContext = () => {
 }
 
 var buildAskAiPanelContent = ({ pageTitle, pageUrl }) => `
-<div data-ai-chat-panel-root="true" class="w-[400px] h-full">
-  <div class="border-l border-gray-200 overflow-hidden justify-end h-full flex flex-col whitespace-nowrap bg-background-100">
+<div data-ai-chat-panel-root="true" class="h-full min-w-0">
+  <div class="overflow-hidden justify-end h-full flex flex-col bg-background-100">
     <div class="flex items-center justify-between pl-3.5 pr-2 py-2 sticky top-0 bg-background-100 h-16 z-10">
       <h2 class="font-semibold text-sm">Ask AI</h2>
       <div class="flex items-center gap-0.5">
@@ -766,11 +900,25 @@ var openAskAiPanel = () => {
   var sidebar = document.getElementById('right-sidebar')
   if (!(sidebar instanceof HTMLElement)) return
 
+  ensureAskAiLayoutStyle()
+  closeHeaderNav()
+  closeMobileHeaderMenu()
+  closeMobileDocsNav()
   captureDefaultRightSidebar(sidebar)
   var pageContext = getAskAiPageContext()
   setElementContentFromHtml(sidebar, buildAskAiPanelContent(pageContext))
   sidebar.setAttribute('data-right-sidebar-mode', 'ask-ai')
+  sidebar.style.setProperty('position', 'fixed', 'important')
+  sidebar.style.setProperty('inset', '0 0 0 auto', 'important')
+  sidebar.style.setProperty('top', '0', 'important')
+  sidebar.style.setProperty('right', '0', 'important')
+  sidebar.style.setProperty('bottom', '0', 'important')
+  sidebar.style.setProperty('height', '100vh', 'important')
+  sidebar.style.setProperty('margin-top', '0', 'important')
+  sidebar.style.setProperty('margin-right', getAskAiPanelEdgeGap(), 'important')
+  sidebar.style.setProperty('z-index', '6001', 'important')
   document.body.classList.add('ask-ai-panel-open')
+  syncAskAiHeaderLayout(true)
 
   try {
     sessionStorage.setItem(AI_PANEL_STORAGE_KEY, 'true')
@@ -780,6 +928,7 @@ var openAskAiPanel = () => {
 var closeAskAiPanel = () => {
   restoreDefaultRightSidebar()
   document.body.classList.remove('ask-ai-panel-open')
+  syncAskAiHeaderLayout(false)
 
   try {
     sessionStorage.setItem(AI_PANEL_STORAGE_KEY, 'false')
@@ -1060,17 +1209,26 @@ var LayoutInteractionsHook = {
         syncMobileHeaderMenuTriggerState()
       }
 
+      var sidebar = document.getElementById('right-sidebar')
+      var isAskAiOpen = document.body.classList.contains('ask-ai-panel-open') ||
+        sidebar?.getAttribute('data-right-sidebar-mode') === 'ask-ai'
+
       if (!isDesktopHeaderNavViewport()) {
         closeHeaderNav()
-        return
       }
 
-      var activeHeaderNavTrigger = getHeaderNavTriggers().find(
-        (trigger) => trigger.getAttribute('aria-expanded') === 'true'
-      )
+      if (sidebar instanceof HTMLElement && isAskAiOpen) {
+        sidebar.style.setProperty('margin-right', getAskAiPanelEdgeGap(), 'important')
+      }
 
-      if (activeHeaderNavTrigger) {
-        positionHeaderNavViewport(activeHeaderNavTrigger)
+      if (isDesktopHeaderNavViewport()) {
+        var activeHeaderNavTrigger = getHeaderNavTriggers().find(
+          (trigger) => trigger.getAttribute('aria-expanded') === 'true'
+        )
+
+        if (activeHeaderNavTrigger) {
+          positionHeaderNavViewport(activeHeaderNavTrigger)
+        }
       }
     }
 
